@@ -1,0 +1,17 @@
+{
+    "name": "samuelr/projeto01",
+    "description": "Um projeto completo em MVC para um PetShop",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "PetShop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samuel Filipe Drumm da Rosa",
+            "email": "sr006546@cfjl.com"
+        }
+    ],
+    "require": {}
+}
