@@ -1,0 +1,48 @@
+[04-Nov-2022 21:28:35 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 51
+[04-Nov-2022 21:28:35 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:58
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('SELECT * FROM E...')
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 58
+[04-Nov-2022 21:28:51 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 51
+[04-Nov-2022 21:28:51 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:58
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('SELECT * FROM e...')
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 58
+[04-Nov-2022 21:29:43 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 51
+[04-Nov-2022 21:29:43 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:58
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('select * from e...')
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 58
+[04-Nov-2022 21:34:39 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 51
+[04-Nov-2022 21:34:39 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:58
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('select * from e...')
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 58
+[04-Nov-2022 21:37:09 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 52
+[04-Nov-2022 21:37:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:59
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('select * from e...', Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 59
+[04-Nov-2022 21:41:49 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 52
+[04-Nov-2022 21:41:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:59
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('select * from e...', Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 59
+[04-Nov-2022 21:41:49 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 52
+[04-Nov-2022 21:41:49 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:59
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(6): PetShop\Core\DB::select('select * from e...', Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 59
+[04-Nov-2022 21:54:05 America/Sao_Paulo] Erro PDO: SQLSTATE[3D000]: Invalid catalog name: 1046 No database selected - 83
+[04-Nov-2022 21:54:05 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao executar comando no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:90
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DB::query('INSERT INTO dic...', Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 90
