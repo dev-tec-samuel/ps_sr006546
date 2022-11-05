@@ -6,7 +6,7 @@ namespace Petshop\Model;
 class Estado
 {
   //Unidade Federativa do estado, pk, nn
-  protected $idEndereco;
+  protected $uf;
 
   //Cód. IBGE do estado, nn
   protected $ibge;
@@ -18,19 +18,19 @@ class Estado
   protected $regiao;
 
   /**
-   * Get the value of idEndereco
+   * Get the value of uf
    */
-  public function getIdEndereco()
+  public function getUf()
   {
-    return $this->idEndereco;
+    return $this->uf;
   }
 
   /**
-   * Set the value of idEndereco
+   * Set the value of uf
    */
-  public function setIdEndereco($idEndereco): self
+  public function setUf($uf): self
   {
-    $this->idEndereco = $idEndereco;
+    $this->uf = $uf;
 
     return $this;
   }
