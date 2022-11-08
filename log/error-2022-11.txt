@@ -46,3 +46,15 @@ Stack trace:
 #0 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DB::query('INSERT INTO dic...', Array)
 #1 {main}
   thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 90
+[08-Nov-2022 20:33:45 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Dica" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[08-Nov-2022 20:34:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Dica" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[08-Nov-2022 20:37:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Dica" not found in C:\xampp\htdocs\projeto01\public\index.php:9
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 9

@@ -1,44 +1,39 @@
 <?php
 
-namespace Petshop\Model;
+namespace PetShop\Model;
 
-//dicas
-class Dica
+use PetShop\Core\Attribute\Campo;
+use PetShop\Core\Attribute\Entidade;
+use PetShop\Core\DAO;
+
+#[Entidade(name: 'dicas')]
+class Dica extends DAO
 {
-  //Cód. Dica, pk, nn, auto
+  #[Campo(label: 'Cód. Dica', nn:true, pk:true, auto:true)]
   protected $idDica;
 
-  //Título da dica, nn
+  #[Campo(label: 'Título da dica', nn:true)]
   protected $titulo;
 
-  //Descrição da dica, nn
+  #[Campo(label: 'Descrição da dica', nn:true)]
   protected $descricao;
 
-  //Dt. Criação, nn, auto
+  #[Campo(label: 'Dt. Criação', nn:true, auto:true)]
   protected $created_at;
 
-  //Dt. Alteração, nn, auto
+  #[Campo(label: 'Dt. Alteração', nn:true, auto:true)]
   protected $updated_at;
 
-  /**
-   * Get the value of idDica
-   */
   public function getIdDica()
   {
     return $this->idDica;
   }
 
-  /**
-   * Get the value of titulo
-   */
   public function getTitulo()
   {
     return $this->titulo;
   }
 
-  /**
-   * Set the value of titulo
-   */
   public function setTitulo($titulo): self
   {
     $this->titulo = $titulo;
@@ -46,17 +41,11 @@ class Dica
     return $this;
   }
 
-  /**
-   * Get the value of descricao
-   */
   public function getDescricao()
   {
     return $this->descricao;
   }
 
-  /**
-   * Set the value of descricao
-   */
   public function setDescricao($descricao): self
   {
     $this->descricao = $descricao;
@@ -64,18 +53,12 @@ class Dica
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */
-  public function getCreatedAt()
+  public function getCreated_At()
   {
     return $this->created_at;
   }
 
-  /**
-   * Get the value of updated_at
-   */
-  public function getUpdatedAt()
+  public function getUpdated_At()
   {
     return $this->updated_at;
   }
