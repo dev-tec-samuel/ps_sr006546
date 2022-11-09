@@ -7,7 +7,46 @@ use ReflectionClass;
 
 class DAO
 {
+  /**@var array Informações da tabela/campos carregados */
+  private $tableInfo = [];
+  
+  public function __construct()
+  {
+    $this->tableInfo = $this->getTableInfo();
+  }
 
+  /**
+   * Método GET para acesso direto via nome de propriedades
+   *
+   * @param string $name
+   * @return mixed
+   */
+  public function __get(string $name)
+  {
+    $metodoProcurado = 'get' . $name;
+    if (method_exists($this, $metodoProcurado)) {
+      return $this->$metodoProcurado();
+    } else {
+      throw new Exception("O atributo {$name} não tem método 'get' assciado");
+    }
+  }
+
+  /**
+   * Método SET para gravação direta via nome de propriedades
+   *
+   * @param string $name Nome da propriedade
+   * @param mixed $value Valor a ser inserido
+   * @param midex
+   */
+  public function __set(string $name, $value)
+  {
+    $metodoProcurado = 'set' . $name;
+    if (method_exists($this, $metodoProcurado)) {
+      $this->$metodoProcurado($value);
+    } else {
+      throw new Exception("O atributo {$name} não tem método 'set' assciado");
+    }
+  }
   /**
    * Função que objetiva retornar as metainformações
    * da classa, baseando-se para isso na leitura do Attributes
@@ -42,35 +81,52 @@ class DAO
   }
 
   /**
-   * Método GET para acesso direto via nome de propriedades
+   * Retorna o nome da tabela instanciada
    *
-   * @param string $name
-   * @return mixed
+   * @return string
    */
-  public function __get(string $name)
+  public function getTableName() : string 
   {
-    $metodoProcurado = 'get' . $name;
-    if (method_exists($this, $metodoProcurado)) {
-      return $this->$metodoProcurado();
-    } else {
-      throw new Exception("O atributo {$name} não tem método 'get' assciado");
-    }
+    return $this->tableInfo['tabela']['name'];
   }
 
   /**
-   * Método SET para gravação direta via nome de propriedades
+   * Retorna informações dos campos/propriedades da classe associada
    *
-   * @param string $name Nome da propriedade
-   * @param mixed $value Valor a ser inserido
-   * @param midex
+   * @return array
    */
-  public function __set(string $name, $value)
+  public function getFields() : array
   {
-    $metodoProcurado = 'set' . $name;
-    if (method_exists($this, $metodoProcurado)) {
-      $this->$metodoProcurado($value);
-    } else {
-      throw new Exception("O atributo {$name} não tem método 'set' assciado");
+    return $this->tableInfo['campos'];
+  }
+
+  /**
+   * Retorna o nome do campo chave da tabela associada a classe atual
+   *
+   * @return string
+   */
+  public function getPkName() : string
+  {
+    foreach($this->tableInfo['campos'] as $cname => $cprops) {
+      if(array_key_exists('pk', $cprops)) {
+        return strtolower($cname);
+      }
     }
+    return '';
+  }
+
+  /**
+   * Retorna o nome do campo de ordenação padrão
+   *
+   * @return string
+   */
+  public function getOrderByField() : string
+  {
+    foreach($this->tableInfo['campos'] as $cname => $cprops) {
+      if(array_key_exists('order', $cprops)) {
+        return strtolower($cname);
+      }
+    }
+    return '';
   }
 }
