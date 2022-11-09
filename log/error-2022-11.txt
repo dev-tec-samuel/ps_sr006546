@@ -79,3 +79,10 @@ Stack trace:
 #0 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DAO->getTableInfo()
 #1 {main}
   thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 33
+[08-Nov-2022 21:56:08 America/Sao_Paulo] Erro PDO: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined - 53
+[08-Nov-2022 21:56:08 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao realizar consulta no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:60
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\DAO.php(164): PetShop\Core\DB::select('SELECT * FROM d...', Array)
+#1 C:\xampp\htdocs\projeto01\public\index.php(11): PetShop\Core\DAO->find(Array)
+#2 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 60

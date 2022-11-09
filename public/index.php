@@ -7,4 +7,5 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 
 $dica = new Dica();
-var_dump($dica->getOrderByField());
+//$dica->find( ['campo2 like'=>'%nov%']);
+var_dump($dica->find(['titulo like'=>'Dica0%']));
