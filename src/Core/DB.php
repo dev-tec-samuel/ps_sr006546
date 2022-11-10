@@ -1,5 +1,5 @@
 <?php
-namespace PetShop\Core;
+namespace Petshop\Core;
 
 use Exception;
 

@@ -1,11 +1,10 @@
 <?php
+namespace Petshop\Model;
 
-namespace PetShop\Model;
-
-use PetShop\Core\Attribute\Campo;
-use PetShop\Core\Attribute\Entidade;
-use PetShop\Core\DAO;
-use PetShop\Core\Exception;
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
+use Petshop\Core\Exception;
 
 #[Entidade(name: 'dicas')]
 class Dica extends DAO

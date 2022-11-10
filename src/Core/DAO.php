@@ -1,8 +1,8 @@
 <?php
-namespace PetShop\Core;
+namespace Petshop\Core;
 
-use PetShop\Core\Attribute\Campo;
-use PetShop\Core\Attribute\Entidade;
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
 use ReflectionClass;
 
 class DAO

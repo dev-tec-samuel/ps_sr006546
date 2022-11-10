@@ -1,9 +1,9 @@
 <?php
-namespace PetShop\Model;
+namespace Petshop\Model;
 
-use PetShop\Core\Attribute\Campo;
-use PetShop\Core\Attribute\Entidade;
-use PetShop\Core\DAO;
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
 
 #[Entidade(name: 'clientes')]
 class Cliente extends DAO
