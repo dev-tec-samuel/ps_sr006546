@@ -91,3 +91,32 @@ Stack trace:
 #0 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DAO->loadById()
 #1 {main}
   thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 173
+[09-Nov-2022 20:19:10 America/Sao_Paulo] PHP Fatal error:  Uncaught PetShop\Core\Exception: O campo descricao deve ser preenchido in C:\xampp\htdocs\projeto01\src\Core\DAO.php:221
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(12): PetShop\Core\DAO->save()
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 221
+[09-Nov-2022 20:20:04 America/Sao_Paulo] PHP Fatal error:  Uncaught PetShop\Core\Exception: O campo Descrição da dica deve ser preenchido in C:\xampp\htdocs\projeto01\src\Core\DAO.php:222
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(12): PetShop\Core\DAO->save()
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 222
+[09-Nov-2022 20:34:11 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: PetShop\Core\DAO::save(): Return value must be of type bool, none returned in C:\xampp\htdocs\projeto01\src\Core\DAO.php:238
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\public\index.php(12): PetShop\Core\DAO->save()
+#1 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 238
+[09-Nov-2022 20:37:25 America/Sao_Paulo] Erro PDO: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 - 89
+[09-Nov-2022 20:37:25 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao executar comando no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:96
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\DAO.php(238): PetShop\Core\DB::query('INSERT INTO dic...', Array)
+#1 C:\xampp\htdocs\projeto01\public\index.php(12): PetShop\Core\DAO->save()
+#2 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 96
+[09-Nov-2022 20:45:17 America/Sao_Paulo] Erro PDO: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1 - 89
+[09-Nov-2022 20:45:17 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao executar comando no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:96
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\DAO.php(238): PetShop\Core\DB::query('INSERT INTO dic...', Array)
+#1 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DAO->save()
+#2 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 96
