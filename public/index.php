@@ -1,11 +1,8 @@
 <?php
 
-use PetShop\Model\Dica;
+use Petshop\Model\Cidade;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$dica = new Dica();
-$dica->loadById(2);
-//$dica->titulo = 'Dica Atualizada';
-$dica->descricao = 'NOVA DESCRIÇÃO';
-$dica->save();
+$cidade = new Cidade();
+var_dump($cidade->find(['municipio like'=>'%horizon%']);

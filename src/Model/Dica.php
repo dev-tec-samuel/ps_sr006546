@@ -67,4 +67,5 @@ class Dica extends DAO
   {
     return $this->updated_at;
   }
+  
 }

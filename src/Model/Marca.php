@@ -2,43 +2,39 @@
 
 namespace Petshop\Model;
 
-//marcas
-class Marca
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
+
+#[Entidade(name: 'marcas')]
+class Marca extends DAO
 {
-  //Cód. Marca, pk, nn, auto
+  #[Campo(label: 'Cód. Marca', pk: true, nn: true, auto: true)]
   protected $idMarca;
 
-  //Nome da marca, nn
+  #[Campo(label: 'Nome da marca', nn: true)]
   protected $marca;
 
-  //Fabricante da marca
+  #[Campo(label: 'Fabricante da marca')]
   protected $fabricante;
 
-  //Dt. Criação, nn, auto
+  #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
   protected $created_at;
 
-  //Dt. Alteração, nn, auto
+  #[Campo(label: 'Dt. Alteração', nn: true, auto: true)]
   protected $updated_at;
 
-  /**
-   * Get the value of idMarca
-   */
+
   public function getIdMarca()
   {
     return $this->idMarca;
   }
 
-  /**
-   * Get the value of marca
-   */
   public function getMarca()
   {
     return $this->marca;
   }
 
-  /**
-   * Set the value of marca
-   */
   public function setMarca($marca): self
   {
     $this->marca = $marca;
@@ -46,17 +42,11 @@ class Marca
     return $this;
   }
 
-  /**
-   * Get the value of fabricante
-   */
   public function getFabricante()
   {
     return $this->fabricante;
   }
 
-  /**
-   * Set the value of fabricante
-   */
   public function setFabricante($fabricante): self
   {
     $this->fabricante = $fabricante;
@@ -64,18 +54,12 @@ class Marca
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */
-  public function getCreatedAt()
+  public function getCreated_At()
   {
     return $this->created_at;
   }
 
-  /**
-   * Get the value of updated_at
-   */
-  public function getUpdatedAt()
+  public function getUpdated_At()
   {
     return $this->updated_at;
   }

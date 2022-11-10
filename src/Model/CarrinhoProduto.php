@@ -2,101 +2,79 @@
 
 namespace Petshop\Model;
 
-//carrinhosprodutos
-class CarrinhoProduto
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
+
+#[Entidade(name: 'carrinhosprodutos')]
+class CarrinhoProduto extends DAO
 {
-    //Cód. Produto, pk, nn
-    protected $idProduto;
+  #[Campo(label: 'Cód. Produto', pk: true, nn: true)]
+  protected $idProduto;
 
-    //Cód. Carrinho, pk, nn
-    protected $idCarrinho;
+  #[Campo(label: 'Cód. Carrinho', pk: true, nn: true)]
+  protected $idCarrinho;
 
-    //Preço do produto, nn
-    protected $preco;
+  #[Campo(label: 'Preço do produto', nn: true)]
+  protected $preco;
 
-    //Quantidade do produto, nn
-    protected $quantidade;
+  #[Campo(label: 'Quantidade do produto', nn: true)]
+  protected $quantidade;
 
-    //Dt. Criação, nn, auto
-    protected $created_at;
+  #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
+  protected $created_at;
 
-    /**
-     * Get the value of idProduto
-     */
-    public function getIdProduto()
-    {
-        return $this->idProduto;
-    }
 
-    /**
-     * Set the value of idProduto
-     */
-    public function setIdProduto($idProduto): self
-    {
-        $this->idProduto = $idProduto;
+  public function getIdProduto()
+  {
+    return $this->idProduto;
+  }
 
-        return $this;
-    }
+  public function setIdProduto($idProduto): self
+  {
+    $this->idProduto = $idProduto;
 
-    /**
-     * Get the value of idCarrinho
-     */
-    public function getIdCarrinho()
-    {
-        return $this->idCarrinho;
-    }
+    return $this;
+  }
 
-    /**
-     * Set the value of idCarrinho
-     */
-    public function setIdCarrinho($idCarrinho): self
-    {
-        $this->idCarrinho = $idCarrinho;
+  public function getIdCarrinho()
+  {
+    return $this->idCarrinho;
+  }
 
-        return $this;
-    }
+  public function setIdCarrinho($idCarrinho): self
+  {
+    $this->idCarrinho = $idCarrinho;
 
-    /**
-     * Get the value of preco
-     */
-    public function getPreco()
-    {
-        return $this->preco;
-    }
+    return $this;
+  }
 
-    /**
-     * Set the value of preco
-     */
-    public function setPreco($preco): self
-    {
-        $this->preco = $preco;
+  public function getPreco()
+  {
+    return $this->preco;
+  }
 
-        return $this;
-    }
+  public function setPreco($preco): self
+  {
+    $this->preco = $preco;
 
-    /**
-     * Get the value of quantidade
-     */
-    public function getQuantidade()
-    {
-        return $this->quantidade;
-    }
+    return $this;
+  }
 
-    /**
-     * Set the value of quantidade
-     */
-    public function setQuantidade($quantidade): self
-    {
-        $this->quantidade = $quantidade;
+  public function getQuantidade()
+  {
+    return $this->quantidade;
+  }
 
-        return $this;
-    }
+  public function setQuantidade($quantidade): self
+  {
+    $this->quantidade = $quantidade;
 
-    /**
-     * Get the value of created_at
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
+    return $this;
+  }
+
+  public function getCreated_At()
+  {
+    return $this->created_at;
+  }
 }

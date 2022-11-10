@@ -2,70 +2,66 @@
 
 namespace Petshop\Model;
 
-//produtos
-class Produto
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
+
+#[Entidade(name: 'produtos')]
+class Produto extends DAO
 {
-  //Cód. Produto, pk, nn, auto
+  #[Campo(label: 'Cód. Produto', pk: true, nn: true, auto: true)]
   protected $idProduto;
 
-  //Cód. Marca, nn
+  #[Campo(label: 'Cód. Marca', nn: true)]
   protected $idMarca;
 
-  //Nome do produto, nn
+  #[Campo(label: 'Nome do produto', nn: true)]
   protected $nome;
 
-  //Tipo do produto, nn
+  #[Campo(label: 'Tipo do produto', nn: true)]
   protected $tipo;
 
-  //Preço do produto, nn
+  #[Campo(label: 'Preço do produto', nn: true)]
   protected $preco;
 
-  //Quantidade do produto, nn
+  #[Campo(label: 'Quantidade do produto', nn: true)]
   protected $quantidade;
 
-  //Largura do produto
+  #[Campo(label: 'Largura do produto')]
   protected $largura;
 
-  //Altura do produto
+  #[Campo(label: 'Altura do produto')]
   protected $altura;
 
-  //Profundidade do produto
+  #[Campo(label: 'Profundidade do produto')]
   protected $profundidade;
 
-  //Peso do produto
+  #[Campo(label: 'Peso do produto')]
   protected $peso;
 
-  //Descrição do produto
+  #[Campo(label: 'Descrição do produto')]
   protected $descricao;
 
-  //Especificações do produto
+  #[Campo(label: 'Especificações do produto')]
   protected $especificacoes;
 
-  //Dt. Criação, nn, auto
+  #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
   protected $created_at;
 
-  //Dt. Alteração, nn, auto
+  #[Campo(label: 'Dt. Alteração', nn: true, auto: true)]
   protected $updated_at;
 
-  /**
-   * Get the value of idProduto
-   */
+
   public function getIdProduto()
   {
     return $this->idProduto;
   }
 
-  /**
-   * Get the value of idMarca
-   */
   public function getIdMarca()
   {
     return $this->idMarca;
   }
 
-  /**
-   * Set the value of idMarca
-   */
   public function setIdMarca($idMarca): self
   {
     $this->idMarca = $idMarca;
@@ -73,17 +69,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of nome
-   */
   public function getNome()
   {
     return $this->nome;
   }
 
-  /**
-   * Set the value of nome
-   */
   public function setNome($nome): self
   {
     $this->nome = $nome;
@@ -91,17 +81,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of tipo
-   */
   public function getTipo()
   {
     return $this->tipo;
   }
 
-  /**
-   * Set the value of tipo
-   */
   public function setTipo($tipo): self
   {
     $this->tipo = $tipo;
@@ -109,17 +93,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of preco
-   */
   public function getPreco()
   {
     return $this->preco;
   }
 
-  /**
-   * Set the value of preco
-   */
   public function setPreco($preco): self
   {
     $this->preco = $preco;
@@ -127,17 +105,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of quantidade
-   */
   public function getQuantidade()
   {
     return $this->quantidade;
   }
 
-  /**
-   * Set the value of quantidade
-   */
   public function setQuantidade($quantidade): self
   {
     $this->quantidade = $quantidade;
@@ -145,17 +117,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of largura
-   */
   public function getLargura()
   {
     return $this->largura;
   }
 
-  /**
-   * Set the value of largura
-   */
   public function setLargura($largura): self
   {
     $this->largura = $largura;
@@ -163,17 +129,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of altura
-   */
   public function getAltura()
   {
     return $this->altura;
   }
 
-  /**
-   * Set the value of altura
-   */
   public function setAltura($altura): self
   {
     $this->altura = $altura;
@@ -181,17 +141,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of profundidade
-   */
   public function getProfundidade()
   {
     return $this->profundidade;
   }
 
-  /**
-   * Set the value of profundidade
-   */
   public function setProfundidade($profundidade): self
   {
     $this->profundidade = $profundidade;
@@ -199,17 +153,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of peso
-   */
   public function getPeso()
   {
     return $this->peso;
   }
 
-  /**
-   * Set the value of peso
-   */
   public function setPeso($peso): self
   {
     $this->peso = $peso;
@@ -217,17 +165,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of descricao
-   */
   public function getDescricao()
   {
     return $this->descricao;
   }
 
-  /**
-   * Set the value of descricao
-   */
   public function setDescricao($descricao): self
   {
     $this->descricao = $descricao;
@@ -235,17 +177,11 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of especificacoes
-   */
   public function getEspecificacoes()
   {
     return $this->especificacoes;
   }
 
-  /**
-   * Set the value of especificacoes
-   */
   public function setEspecificacoes($especificacoes): self
   {
     $this->especificacoes = $especificacoes;
@@ -253,18 +189,12 @@ class Produto
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */
-  public function getCreatedAt()
+  public function getCreated_At()
   {
     return $this->created_at;
   }
 
-  /**
-   * Get the value of updated_at
-   */
-  public function getUpdatedAt()
+  public function getUpdated_At()
   {
     return $this->updated_at;
   }

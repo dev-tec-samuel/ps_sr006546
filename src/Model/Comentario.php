@@ -2,49 +2,45 @@
 
 namespace Petshop\Model;
 
-//comentarios
-class Comentario
+use Petshop\Core\Attribute\Campo;
+use Petshop\Core\Attribute\Entidade;
+use Petshop\Core\DAO;
+
+#[Entidade(name: 'comentarios')]
+class Comentario extends DAO
 {
-  //Cód. Comentário, pk, nn, auto
+  #[Campo(label: 'Cód. Comentário', pk: true, nn: true, auto: true)]
   protected $idComentario;
 
-  //Cód. Produto, nn
+  #[Campo(label: 'Cód. Produto', nn: true)]
   protected $idProduto;
 
-  //Cód. Cliente, nn
+  #[Campo(label: 'Cód. Cliente', nn: true)]
   protected $idCliente;
 
-  //Tipo do comentário, nn
+  #[Campo(label: 'Tipo do comentário', nn: true)]
   protected $tipo;
 
-  //Descrição do comentário, nn
+  #[Campo(label: 'Dedscrição do comentário', nn: true)]
   protected $descricao;
 
-  //Dt. Criação, nn, auto
+  #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
   protected $created_at;
 
-  //Dt. Alteração, nn, auto
+  #[Campo(label: 'Dt. Alteração', nn: true, auto: true)]
   protected $updated_at;
 
-  /**
-   * Get the value of idComentario
-   */
+
   public function getIdComentario()
   {
     return $this->idComentario;
   }
 
-  /**
-   * Get the value of idProduto
-   */
   public function getIdProduto()
   {
     return $this->idProduto;
   }
 
-  /**
-   * Set the value of idProduto
-   */
   public function setIdProduto($idProduto): self
   {
     $this->idProduto = $idProduto;
@@ -52,35 +48,23 @@ class Comentario
     return $this;
   }
 
-  /**
-   * Get the value of idCliente
-   */
   public function getIdCliente()
   {
     return $this->idCliente;
   }
 
-  /**
-   * Set the value of idCliente
-   */
   public function setIdCliente($idCliente): self
   {
     $this->idCliente = $idCliente;
 
     return $this;
   }
-
-  /**
-   * Get the value of tipo
-   */
+/
   public function getTipo()
   {
     return $this->tipo;
   }
 
-  /**
-   * Set the value of tipo
-   */
   public function setTipo($tipo): self
   {
     $this->tipo = $tipo;
@@ -88,17 +72,11 @@ class Comentario
     return $this;
   }
 
-  /**
-   * Get the value of descricao
-   */
   public function getDescricao()
   {
     return $this->descricao;
   }
 
-  /**
-   * Set the value of descricao
-   */
   public function setDescricao($descricao): self
   {
     $this->descricao = $descricao;
@@ -106,18 +84,12 @@ class Comentario
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */
-  public function getCreatedAt()
+  public function getCreated_At()
   {
     return $this->created_at;
   }
 
-  /**
-   * Get the value of updated_at
-   */
-  public function getUpdatedAt()
+  public function getUpdated_At()
   {
     return $this->updated_at;
   }

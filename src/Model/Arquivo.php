@@ -2,52 +2,49 @@
 
 namespace Petshop\Model;
 
-//arquivos
-class Arquivo
+use PetShop\Core\Attribute\Campo;
+use PetShop\Core\Attribute\Entidade;
+use PetShop\Core\DAO;
+use PetShop\Core\Exception;
+
+#[Entidade(name: 'arquivos')]
+class Arquivo extends DAO
 {
-  //Cód. Arquivo, pk, nn, auto
+  #[Campo(label: 'Cód. Arquivo', nn:true, pk:true, auto:true)]
   protected $idArquivo;
 
-  //Nome do arquivo, nn
+  #[Campo(label: 'Nome do arquivo', nn:true)]
   protected $nome;
 
-  //Tipo do arquivo, nn
+  #[Campo(label: 'Tipo do arquivo', nn:true)]
   protected $tipo;
 
-  //Descrição do arquivo
+  #[Campo(label: 'Descrição do arquivo', nn:true)]
   protected $descricao;
 
-  //Tabela do arquivo
+  #[Campo(label: 'Tabela do arquivo', nn:true)]
   protected $tabela;
 
-  //Cód. Tabela do arquivo
+  #[Campo(label: 'Cód. Tabela do arquivo', nn:true)]
   protected $tabelaId;
 
-  //Dt. Criação, nn, auto
+  #[Campo(label: 'Dt. Criação', nn:true, auto:true)]
   protected $created_at;
 
-  //Dt. Alteração, nn, auto
+  #[Campo(label: 'Dt. Alteração', nn:true, auto:true)]
   protected $updated_at;
 
-  /**
-   * Get the value of idArquivo
-   */
   public function getIdArquivo()
   {
     return $this->idArquivo;
   }
 
-  /**
-   * Get the value of nome
-   */
+
   public function getNome()
   {
     return $this->nome;
   }
 
-  /**
-   * Set the value of nome
-   */
   public function setNome($nome): self
   {
     $this->nome = $nome;
@@ -55,17 +52,11 @@ class Arquivo
     return $this;
   }
 
-  /**
-   * Get the value of tipo
-   */
   public function getTipo()
   {
     return $this->tipo;
   }
 
-  /**
-   * Set the value of tipo
-   */
   public function setTipo($tipo): self
   {
     $this->tipo = $tipo;
@@ -73,17 +64,11 @@ class Arquivo
     return $this;
   }
 
-  /**
-   * Get the value of descricao
-   */
   public function getDescricao()
   {
     return $this->descricao;
   }
 
-  /**
-   * Set the value of descricao
-   */
   public function setDescricao($descricao): self
   {
     $this->descricao = $descricao;
@@ -91,17 +76,11 @@ class Arquivo
     return $this;
   }
 
-  /**
-   * Get the value of tabela
-   */
   public function getTabela()
   {
     return $this->tabela;
   }
 
-  /**
-   * Set the value of tabela
-   */
   public function setTabela($tabela): self
   {
     $this->tabela = $tabela;
@@ -109,17 +88,11 @@ class Arquivo
     return $this;
   }
 
-  /**
-   * Get the value of tabelaId
-   */
   public function getTabelaId()
   {
     return $this->tabelaId;
   }
 
-  /**
-   * Set the value of tabelaId
-   */
   public function setTabelaId($tabelaId): self
   {
     $this->tabelaId = $tabelaId;
@@ -127,18 +100,12 @@ class Arquivo
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */
-  public function getCreatedAt()
+  public function getCreated_At()
   {
     return $this->created_at;
   }
 
-  /**
-   * Get the value of updated_at
-   */
-  public function getUpdatedAt()
+  public function getUpdated_At()
   {
     return $this->updated_at;
   }
