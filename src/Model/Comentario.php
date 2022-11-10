@@ -1,6 +1,6 @@
 <?php
 
-namespace Petshop\Model;
+namespace PetShop\Model;
 
 use Petshop\Core\Attribute\Campo;
 use Petshop\Core\Attribute\Entidade;
@@ -93,4 +93,5 @@ class Comentario extends DAO
   {
     return $this->updated_at;
   }
+  
 }

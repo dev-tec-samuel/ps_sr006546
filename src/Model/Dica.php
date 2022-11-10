@@ -1,6 +1,6 @@
 <?php
 
-namespace PetShop\Model;
+namespace Petshop\Model;
 
 use PetShop\Core\Attribute\Campo;
 use PetShop\Core\Attribute\Entidade;
