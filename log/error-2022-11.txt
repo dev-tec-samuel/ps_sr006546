@@ -148,3 +148,33 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\projeto01\public\index.php on line 8
+[09-Nov-2022 22:28:00 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Estado" not found in C:\xampp\htdocs\projeto01\public\index.php:8
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 8
+[09-Nov-2022 22:28:37 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Core\DAO" not found in C:\xampp\htdocs\projeto01\src\Model\Estado.php:10
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projeto01\public\index.php(8): Composer\Autoload\ClassLoader->loadClass('PetShop\\Model\\E...')
+#3 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Estado.php on line 10
+[09-Nov-2022 22:30:04 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Core\DAO" not found in C:\xampp\htdocs\projeto01\src\Model\Avaliacao.php:9
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projeto01\public\index.php(10): Composer\Autoload\ClassLoader->loadClass('PetShop\\Model\\A...')
+#3 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Avaliacao.php on line 9
+[09-Nov-2022 23:40:14 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Dica" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[09-Nov-2022 23:42:27 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Core\DAO" not found in C:\xampp\htdocs\projeto01\src\Model\Avaliacao.php:9
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projeto01\public\index.php(9): Composer\Autoload\ClassLoader->loadClass('PetShop\\Model\\A...')
+#3 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Avaliacao.php on line 9
+[09-Nov-2022 23:48:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected token "/", expecting "function" or "const" in C:\xampp\htdocs\projeto01\src\Model\Comentario.php on line 61

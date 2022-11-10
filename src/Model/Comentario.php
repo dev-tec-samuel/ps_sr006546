@@ -1,10 +1,9 @@
 <?php
-
 namespace PetShop\Model;
 
-use Petshop\Core\Attribute\Campo;
-use Petshop\Core\Attribute\Entidade;
-use Petshop\Core\DAO;
+use PetShop\Core\Attribute\Campo;
+use PetShop\Core\Attribute\Entidade;
+use PetShop\Core\DAO;
 
 #[Entidade(name: 'comentarios')]
 class Comentario extends DAO
@@ -59,7 +58,7 @@ class Comentario extends DAO
 
     return $this;
   }
-/
+
   public function getTipo()
   {
     return $this->tipo;
