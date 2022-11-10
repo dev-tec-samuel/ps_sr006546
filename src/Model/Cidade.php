@@ -81,11 +81,4 @@ class Cidade extends DAO
   {
     return $this->capital;
   }
-
-  public function setCapital($capital): self
-  {
-    $this->capital = $capital;
-
-    return $this;
-  }
 }

@@ -120,3 +120,19 @@ Stack trace:
 #1 C:\xampp\htdocs\projeto01\public\index.php(10): PetShop\Core\DAO->save()
 #2 {main}
   thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 96
+[09-Nov-2022 22:06:24 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Cidade" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[09-Nov-2022 22:07:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Cidade" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[09-Nov-2022 22:10:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Cidade" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
+[09-Nov-2022 22:11:55 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Model\Cidade" not found in C:\xampp\htdocs\projeto01\public\index.php:7
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\projeto01\public\index.php on line 7
