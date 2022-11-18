@@ -26,3 +26,23 @@
   background-color: transparent;
   width: 3em;
 }
+
+.rodape-site {
+  background-color: #efe6dd;
+  color: #777;
+}
+
+.rodape-site  .pgto-social a,
+.rodape-site  .pgto-social svg {
+  color: #777;
+  text-decoration: none;
+  transition: .2s;
+}
+.rodape-site .pgto-social a:hover,
+.rodape-site .pgto-social svg:hover {
+  color: #333;
+}
+
+.rodae-site .info-matriz {
+  font-size: .8em;
+}
