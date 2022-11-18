@@ -5,7 +5,7 @@ use Petshop\Core\Attribute\Campo;
 use Petshop\Core\Attribute\Entidade;
 use ReflectionClass;
 
-class DAO
+abstract class DAO
 {
   /**@var array Informações da tabela/campos carregados */
   private $tableInfo = [];
