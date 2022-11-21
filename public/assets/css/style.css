@@ -54,3 +54,15 @@
 .site-card-opcoes .card a b{
   color: #ff4500;
 }
+
+.pg-conta .btn-conta {
+  margin-top: 5em;
+}
+
+/*CRIAÇÃO DE VÁRIAVEIS PARA ARMAZENAR VALORES DE ESTILIZAÇÃO*/
+/* :root {
+  --corTeste: #006677;
+}
+.btn-cadstro {
+  background-color: var(--corTeste);
+} */
