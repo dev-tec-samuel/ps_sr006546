@@ -43,9 +43,7 @@ class CadastroController extends FrontController
       $this->cadastro();
     }
 
-    header('location:/meu-cadastro');
-    exit;
-    
+    redireciona('/login', 'info', 'Cadastro realizado com sucesso, faça o login para continuar');
   }
 
   private function formCadastro()
