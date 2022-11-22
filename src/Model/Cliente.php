@@ -1,4 +1,5 @@
 <?php
+
 namespace Petshop\Model;
 
 use Petshop\Core\Attribute\Campo;
@@ -19,7 +20,7 @@ class Cliente extends DAO
   #[Campo(label: 'Documento', nn: true)]
   protected $cpfCnpj;
 
-  #[Campo(label: 'Nome do cliente', nn: true, order:true)]
+  #[Campo(label: 'Nome do cliente', nn: true, order: true)]
   protected $nome;
 
   #[Campo(label: 'E-mail do cliente', nn: true)]
@@ -71,11 +72,11 @@ class Cliente extends DAO
     } else {
       $docValido = v::cnpj()->validate($cpfCnpj);
     }
-    
+
     if (!$docValido) {
       throw new Exception('Documento informado é inválido');
     }
-    
+
     $this->cpfCnpj = $cpfCnpj;
     return $this;
   }
@@ -116,7 +117,11 @@ class Cliente extends DAO
 
   public function setSenha(string $senha): self
   {
-    $hashdaSenha = hash_hmac('mds', $senha, SALT_SENHA);
+    if (strlen($senha) < 5) {
+      throw new Exception('O comprimento da senha é inválido, digite ao menos cinco caracteres');
+    }
+
+    $hashdaSenha = hash_hmac('md5', $senha, SALT_SENHA);
     $senha = password_hash($hashdaSenha, PASSWORD_DEFAULT);
     $this->senha = $senha;
     return $this;

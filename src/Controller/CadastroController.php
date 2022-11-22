@@ -29,7 +29,9 @@ class CadastroController extends FrontController
       $cliente->nome     = $_POST['nome']    ?? null;
       $cliente->email    = $_POST['email']   ?? null;
       $cliente->senha    = $_POST['senha']   ?? null;
-      $cliente->senha2   = $_POST['senha2']  ?? null;
+      if($_POST['senha'] != $_POST['senha2']) {
+        throw new Exception('As senhas precisam ser iguais');
+      }
       $cliente->save();
 
     } catch(Exception $e) {
@@ -41,6 +43,9 @@ class CadastroController extends FrontController
       $this->cadastro();
     }
 
+    header('location:/meu-cadastro');
+    exit;
+    
   }
 
   private function formCadastro()
