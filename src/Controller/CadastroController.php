@@ -54,7 +54,7 @@ class CadastroController extends FrontController
       'fields' => [
         [
           'type' => 'radio-inline',
-          'class' => 'col-4',
+          'class' => 'col-6',
           'label' => 'Você é pessoa...',
           'name' => 'tipo',
           'options' => [
