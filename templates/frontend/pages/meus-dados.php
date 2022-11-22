@@ -1,1 +1,21 @@
-teste
+<?php
+  $cliente =$_SESSION['cliente'];
+  $cliente['prinome'] = substr($cliente['nome'], 0, strpos($cliente['nome'], ' '));
+?>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-3 text-center">
+      <div>Bem vindo(a): <strong><?= $cliente['prinome']?></strong></div>
+      <div style="font-size:.8em;">(<?= $cliente['email']?>)</div>
+      <div class="mt-5">
+        <a href="/logout" class="badge text-bg-warning text-decoration-none">SAIR</a>
+      </div>
+    </div>
+    <div class="col-9 ps-5">
+      - teste<br>
+      - teste<br>
+      - teste
+    </div>
+  </div>
+</div>
