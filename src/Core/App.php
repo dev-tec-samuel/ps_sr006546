@@ -51,7 +51,7 @@ class App
     self::$router->get('/login', '\Petshop\Controller\LoginController@login');
     self::$router->get('/cadastro', '\Petshop\Controller\CadastroController@cadastro');
     self::$router->get('/meus-dados', '\Petshop\Controller\meusdadosController@meusDados');
-    
+
     self::$router->post('/cadastro', '\Petshop\Controller\CadastroController@postCadastro');
   }
 
@@ -88,6 +88,6 @@ class App
    */
   private static function carregasessao()
   {
-    
+    session_start();
   }
 }
