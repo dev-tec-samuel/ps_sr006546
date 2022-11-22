@@ -7,7 +7,7 @@
     </div>
     <div class="col-3 me-auto text-center">
       <h3 class="display-6 pb-2 border-bottom mb-4">Crie sua Conta</h3>
-      <a href="/cadastro" class="btn btn-info W-75 btn-conta">Criar conta</a>
+      <a href="/cadastro" class="btn btn-info w-75 btn-conta">Criar conta</a>
     </div>
   </div>
 
