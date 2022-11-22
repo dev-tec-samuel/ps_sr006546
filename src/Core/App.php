@@ -47,11 +47,14 @@ class App
    */
   private static function registraRotasDoFrontEnd()
   {
+    // ROTAS dos GETTERS
     self::$router->get('/', '\Petshop\Controller\HomeController@index');
     self::$router->get('/login', '\Petshop\Controller\LoginController@login');
     self::$router->get('/cadastro', '\Petshop\Controller\CadastroController@cadastro');
     self::$router->get('/meus-dados', '\Petshop\Controller\meusdadosController@meusDados');
 
+    //ROTAS dos SETTERS
+    self::$router->post('/login', '\Petshop\Controller\LoginController@postlogin');
     self::$router->post('/cadastro', '\Petshop\Controller\CadastroController@postCadastro');
   }
 
