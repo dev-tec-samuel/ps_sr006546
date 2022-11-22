@@ -44,7 +44,7 @@ abstract class DAO
     if (method_exists($this, $metodoProcurado)) {
       $this->$metodoProcurado($value);
     } else {
-      throw new Exception("O atributo {$name} não tem método 'set' assciado");
+      throw new Exception("O atributo {$name} não tem método 'set' associado");
     }
   }
   /**
