@@ -50,6 +50,7 @@ class App
     // ROTAS dos GETTERS
     self::$router->get('/', '\Petshop\Controller\HomeController@index');
     self::$router->get('/login', '\Petshop\Controller\LoginController@login');
+    self::$router->get('/logout', '\Petshop\Controller\LoginController@logout');
     self::$router->get('/cadastro', '\Petshop\Controller\CadastroController@cadastro');
     self::$router->get('/meus-dados', '\Petshop\Controller\meusdadosController@meusDados');
 
