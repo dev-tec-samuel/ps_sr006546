@@ -52,11 +52,13 @@ class App
     self::$router->get('/login', '\Petshop\Controller\LoginController@login');
     self::$router->get('/logout', '\Petshop\Controller\LoginController@logout');
     self::$router->get('/cadastro', '\Petshop\Controller\CadastroController@cadastro');
-    self::$router->get('/meus-dados', '\Petshop\Controller\meusdadosController@meusDados');
+    self::$router->get('/meus-dados', '\Petshop\Controller\MeusDadosController@meusDados');
+    self::$router->get('/fale-conosco', '\Petshop\Controller\FaleConoscoController@faleConosco');
 
     //ROTAS dos SETTERS
     self::$router->post('/login', '\Petshop\Controller\LoginController@postlogin');
     self::$router->post('/cadastro', '\Petshop\Controller\CadastroController@postCadastro');
+    self::$router->post('/fale-conosco', '\Petshop\Controller\FaleConoscoController@postFaleConosco');
   }
 
   /**

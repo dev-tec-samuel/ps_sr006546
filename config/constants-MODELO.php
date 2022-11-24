@@ -28,8 +28,10 @@ define('DB_PASSWORD', '');
 /**
  * DEFINIÇÕES DE ENVIO DE EMAIL
  */
-define('MAIL_HOST', 'smtp.gamil.com');
+define('MAIL_HOST', 'smtp.gmail.com');
 define('MAIL_PORT', 587);
 define('MAIL_NAME', 'Bicho Novo Petshop');
-define('MAIL_USER', '');
+define('MAIL_USER', 'sr006546@cfjl.com.br');
 define('MAIL_PASSWORD', '');
+define('MAIL_CONTACTNAME', 'Samuel Atendedor');
+define('MAIL_CONTACTMAIL', 'sr006546@cfjl.com.br');
