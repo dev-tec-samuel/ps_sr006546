@@ -3,7 +3,7 @@
  * DEFINIÇÕES GLOBAIS DO PROJETO
  */
 define('FRONTEND_TITLE', 'Bicho Novo: Seu Petshop Animal');
-define('BACKTEND_TITLE', 'Bicho Novo');
+define('BACKEND_TITLE', 'Bicho Novo');
 define('TIMEZONE', 'America/Sao_Paulo');
 define('DISPLAY_ERRORS', 1);
 define('PATH_PROJETO', __DIR__ . '/../');
