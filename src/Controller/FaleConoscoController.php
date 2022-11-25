@@ -65,6 +65,7 @@ class FaleConoscoController extends FrontController
       ];
 
       $this->faleConosco();
+      exit;
     }
     redireciona('/fale-conosco', 'success', 'Mensagem enviada com SUCESSO');
   }
