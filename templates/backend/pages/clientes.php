@@ -1,1 +1,1 @@
-teset
+<?= $tabela??'' ?>
