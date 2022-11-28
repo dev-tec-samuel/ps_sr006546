@@ -97,11 +97,12 @@ class AdminClienteController
           'options' => [
             ['value' => 'F', 'label' => 'Física'],
             ['value' => 'J', 'label' => 'Jurídica'],
-          ]
+          ],
+          'required'=>true
         ],
-        ['type' => 'text', 'name' => 'cpfcnpj', 'class' => 'col-3', 'label' => 'Documento'],
-        ['type' => 'text', 'name' => 'nome', 'class' => 'col-4', 'label' => 'Nome completo'],
-        ['type' => 'email', 'name' => 'email', 'class' => 'col-3', 'label' => 'E-mail'],
+        ['type' => 'text', 'name' => 'cpfcnpj', 'class' => 'col-3', 'label' => 'Documento', 'required'=>true],
+        ['type' => 'text', 'name' => 'nome', 'class' => 'col-4', 'label' => 'Nome completo', 'required'=>true],
+        ['type' => 'email', 'name' => 'email', 'class' => 'col-3', 'label' => 'E-mail', 'required'=>true],
         ['type' => 'password', 'name' => 'senha', 'class' => 'col-3', 'label' => 'Senha'],
         ['type' => 'readonly', 'name' => 'created_at', 'class' => 'col-3', 'label' => 'Criado em:'],
         ['type' => 'readonly', 'name' => 'updated_at', 'class' => 'col-2', 'label' => 'Atualizado em:'],
