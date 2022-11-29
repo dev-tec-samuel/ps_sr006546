@@ -91,9 +91,9 @@ class AdminProdutoController
   {
     $marcas = (new Marca)->find();
     $optionsMarca = [];
-  foreach($marcas as $m) {
-    $optionsMarca[] = ['value'=>$m['idmarca'], 'label'=>$m['marca']];
-  }
+    foreach($marcas as $m) {
+      $optionsMarca[] = ['value'=>$m['idmarca'], 'label'=>$m['marca']];
+    }
     $dados = [
       'btn_class' => 'btn btn-warning px-5 mt-5',
       'btn_label' => ($novo ? 'Adicionar' : 'Atualizar'),
