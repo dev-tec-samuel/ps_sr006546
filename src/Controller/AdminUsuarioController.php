@@ -26,6 +26,7 @@ class AdminUsuarioController
     //alimentando dados para a página de clientes
     $dados = [];
     $dados['titulo'] = 'Usuários - Listagem';
+    $dados['usuario'] = $_SESSION['usuario'];
     $dados['tabela'] = $htmlTabela;
 
     Render::back('usuarios', $dados);
@@ -93,7 +94,7 @@ class AdminUsuarioController
       'btn_class' => 'btn btn-warning px-5 mt-5',
       'btn_label' => ($novo ? 'Adicionar' : 'Atualizar'),
       'fields' => [
-        ['type' => 'readonly', 'name' => 'idusuario', 'class' => 'col-2', 'label' => 'Id. Cliente'],
+        ['type' => 'readonly', 'name' => 'idusuario', 'class' => 'col-2', 'label' => 'Id. Usuário'],
         [
           'type' => 'radio-inline', 'name' => 'tipo', 'class' => 'col-3', 'label' => 'Função...',
           'options' => [
