@@ -24,8 +24,10 @@ $campoChave = $objeto->getPkName();
 //pega a rota atual para fazer o link de edição
 $rotaAtual = $_SERVER['REQUEST_URI'];
 
-//pega todos os registros cadastrados nesta tabela
-$rows = $objeto->find();
+if (!isset($rows)) {
+  //pega todos os registros cadastrados nesta tabela
+  $rows = $objeto->find();
+}
 
 //montando as linhas de dados da tabela
 $htmlLinhas = '';
@@ -43,15 +45,31 @@ foreach ($rows as $row) {
   //criando botão de editar
   $valorChave = $row[$campoChave];
   $linkEdicao = "{$rotaAtual}/{$valorChave}";
-  $htmlLinhas .= <<<HTML
-        <td class="text-center">
-          <a href="{$linkEdicao}" class="text-danger" title="Editar registro">
-            <i class="bi bi-pencil-square"></i>
-          </a>
-        </td>
+  $btnEditar  = <<<HTML
+        <a href="{$linkEdicao}" class="text-danger text-decoration-none px-1" title="Editar registro">
+          <i class="bi bi-pencil-square"></i>
+        </a>
   HTML;
 
-  $htmlLinhas .= '</tr>';
+  $btnImagem  = '';
+  if (!empty($imagens)) {
+    $model = pathinfo($objeto::class, PATHINFO_BASENAME);
+    $rotaImagens = "/admin/imagens/{$model}/{$valorChave}";
+
+    $btnImagem = <<<HTML
+        <a href="{$rotaImagens}" class="text-success text-decoration-none px-1" title="Editar imagens">
+          <i class="bi bi-image"></i>
+        </a> 
+    HTML;
+  }
+
+  $htmlLinhas .= <<<HTML
+        <td class="text-center">
+          {$btnEditar}
+          {$btnImagem}
+        </td>
+    </tr>
+  HTML;
 }
 ?>
 <div class="text-end mb-3">
@@ -71,7 +89,7 @@ foreach ($rows as $row) {
       <?= $htmlLinhas ?>
     </tbody>
     <tfoot>
-      <td class="text-end" colspan="<?= count($colunas)+ 1?>">
+      <td class="text-end" colspan="<?= count($colunas) + 1 ?>">
         Total de registros: <strong><?= count($rows) ?></strong>
       </td>
     </tfoot>
