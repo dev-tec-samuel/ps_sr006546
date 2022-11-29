@@ -13,11 +13,12 @@ class AdminCategoriaController
     //alimentando dados para a tabela de listagem
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Categoria();
+    $dadosListagem['imagens']  = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idcategoria',  'class' => 'text-center'],
       ['campo' => 'nome'],
       ['campo' => 'descricao'],
-      ['campo' => 'created_at', 'class' => 'text-center'],
+      ['campo' => 'created_at',   'class' => 'text-center'],
     ];
     $htmlTabela = Render::block('tabela-admin', $dadosListagem);
 
