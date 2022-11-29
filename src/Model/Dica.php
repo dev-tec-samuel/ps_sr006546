@@ -1,4 +1,5 @@
 <?php
+
 namespace Petshop\Model;
 
 use Petshop\Core\Attribute\Campo;
@@ -9,19 +10,19 @@ use Petshop\Core\Exception;
 #[Entidade(name: 'dicas')]
 class Dica extends DAO
 {
-  #[Campo(label: 'Cód. Dica', nn:true, pk:true, auto:true)]
+  #[Campo(label: 'Cód. Dica', nn: true, pk: true, auto: true)]
   protected $idDica;
 
-  #[Campo(label: 'Título', nn:true, order:true)]
+  #[Campo(label: 'Título', nn: true, order: true)]
   protected $titulo;
 
-  #[Campo(label: 'Descrição', nn:true)]
+  #[Campo(label: 'Descrição', nn: true)]
   protected $descricao;
 
-  #[Campo(label: 'Dt. Criação', nn:true, auto:true)]
+  #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
   protected $created_at;
 
-  #[Campo(label: 'Dt. Alteração', nn:true, auto:true)]
+  #[Campo(label: 'Dt. Alteração', nn: true, auto: true)]
   protected $updated_at;
 
   public function getIdDica()
@@ -34,14 +35,14 @@ class Dica extends DAO
     return $this->titulo;
   }
 
-  public function setTitulo($titulo): self
+  public function setTitulo(string $titulo): self
   {
     $titulo = trim($titulo);
-    if(!$titulo) {
-      throw new Exception('Título é inválido');
+    if (!$titulo) {
+      throw new Exception('Título inválido');
     }
-    $this->titulo = $titulo;
 
+    $this->titulo = $titulo;
     return $this;
   }
 
@@ -50,10 +51,14 @@ class Dica extends DAO
     return $this->descricao;
   }
 
-  public function setDescricao($descricao): self
+  public function setDescricao(string $descricao): self
   {
-    $this->descricao = $descricao;
+    $descricao = trim($descricao);
+    if (strlen($descricao) < 10) {
+      throw new Exception('Descrição inválida para a dica');
+    }
 
+    $this->descricao = $descricao;
     return $this;
   }
 
@@ -66,5 +71,4 @@ class Dica extends DAO
   {
     return $this->updated_at;
   }
-  
 }

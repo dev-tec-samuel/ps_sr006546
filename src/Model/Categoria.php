@@ -1,10 +1,12 @@
 <?php
+
 namespace Petshop\Model;
 
 use Petshop\Core\Attribute\Campo;
 use Petshop\Core\Attribute\Entidade;
 use Petshop\Core\DAO;
-    
+use Petshop\Core\Exception;
+
 #[Entidade(name: 'categorias')]
 class Categoria extends DAO
 {
@@ -34,10 +36,14 @@ class Categoria extends DAO
     return $this->nome;
   }
 
-  public function setNome($nome): self
+  public function setNome(string $nome): self
   {
-    $this->nome = $nome;
+    $nome = trim($nome);
+    if (strlen($nome) < 3) {
+      throw new Exception('Nome de categoria inválido');
+    }
 
+    $this->nome = $nome;
     return $this;
   }
 
@@ -46,10 +52,16 @@ class Categoria extends DAO
     return $this->descricao;
   }
 
-  public function setDescricao($descricao): self
+  public function setDescricao(string $descricao): self
   {
-    $this->descricao = $descricao;
+    $descricao = trim($descricao);
+    if ($descricao == '') {
+      $this->descricao = null;
+    } elseif (strlen($descricao) < 10) {
+      throw new Exception('Descrição inválida para categoria ');
+    }
 
+    $this->descricao = $descricao;
     return $this;
   }
 
