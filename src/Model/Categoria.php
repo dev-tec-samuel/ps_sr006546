@@ -9,12 +9,12 @@ use Petshop\Core\DAO;
 class Categoria extends DAO
 {
   #[Campo(label: 'Cód. Categoria', pk: true, nn: true, auto: true)]
-  protected $idAvaliacao;
+  protected $idCategoria;
 
-  #[Campo(label: 'Nome da categoria', nn: true)]
+  #[Campo(label: 'Nome', nn: true)]
   protected $nome;
 
-  #[Campo(label: 'Descrição da categoria')]
+  #[Campo(label: 'Descrição')]
   protected $descricao;
 
   #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
@@ -24,9 +24,9 @@ class Categoria extends DAO
   protected $updated_at;
 
 
-  public function getIdAvaliacao()
+  public function getIdCategoria()
   {
-    return $this->idAvaliacao;
+    return $this->idCategoria;
   }
 
   public function getNome()
