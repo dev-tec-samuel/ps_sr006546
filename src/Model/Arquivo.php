@@ -4,6 +4,7 @@ namespace Petshop\Model;
 use Petshop\Core\Attribute\Campo;
 use Petshop\Core\Attribute\Entidade;
 use Petshop\Core\DAO;
+use Petshop\Core\Exception;
 
 #[Entidade(name: 'arquivos')]
 class Arquivo extends DAO
@@ -11,19 +12,19 @@ class Arquivo extends DAO
   #[Campo(label: 'Cód. Arquivo', nn:true, pk:true, auto:true)]
   protected $idArquivo;
 
-  #[Campo(label: 'Nome do arquivo', nn:true, order:true)]
+  #[Campo(label: 'Nome', nn:true, order:true)]
   protected $nome;
 
-  #[Campo(label: 'Tipo do arquivo', nn:true)]
+  #[Campo(label: 'Tipo', nn:true)]
   protected $tipo;
 
-  #[Campo(label: 'Descrição do arquivo', nn:true)]
+  #[Campo(label: 'Descrição', nn:true)]
   protected $descricao;
 
-  #[Campo(label: 'Tabela do arquivo', nn:true)]
+  #[Campo(label: 'Tabela', nn:true)]
   protected $tabela;
 
-  #[Campo(label: 'Cód. Tabela do arquivo', nn:true)]
+  #[Campo(label: 'Cód. Tabela', nn:true)]
   protected $tabelaId;
 
   #[Campo(label: 'Dt. Criação', nn:true, auto:true)]
@@ -43,7 +44,7 @@ class Arquivo extends DAO
     return $this->nome;
   }
 
-  public function setNome($nome): self
+  public function setNome(string $nome): self
   {
     $this->nome = $nome;
 
@@ -55,7 +56,7 @@ class Arquivo extends DAO
     return $this->tipo;
   }
 
-  public function setTipo($tipo): self
+  public function setTipo(string $tipo): self
   {
     $this->tipo = $tipo;
 
@@ -67,10 +68,15 @@ class Arquivo extends DAO
     return $this->descricao;
   }
 
-  public function setDescricao($descricao): self
+  public function setDescricao(string $descricao): self
   {
+    $descricao = trim($descricao);
+    if($descricao=='') {
+      $this->descricao = null;
+    } else if(strlen($descricao)<5) {
+      throw new Exception('A descrição é inválida');
+    }
     $this->descricao = $descricao;
-
     return $this;
   }
 
