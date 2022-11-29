@@ -256,4 +256,33 @@ abstract class DAO
 
     return true;
   }
+
+  /**
+   * Retorna uma lista de todos os arquivos cadastrados para o registro corrente
+   *
+   * @return array
+   */
+  public function getFiles() : array
+  {
+    $nomeDaTabela = $this->getTableName();
+    $nomeCampoChave = $this->getPkName();
+    $valorCampoChave = $this->$nomeCampoChave;
+
+    $slq = 'SELECT * 
+            FROM ARQUIVOS
+            WHERE tabela = ?
+            AND tabelaid = ?
+            ORDER BY created_at desc';
+    $parametros = ["{$nomeDaTabela}.{$nomeCampoChave}", $valorCampoChave];
+
+    $files = DB::select($slq, $parametros);
+
+    foreach($files as &$file) {
+      $nomeArquivo = $file['idarquivo'] . '.' . pathinfo($file['nome'], PATHINFO_EXTENSION);
+      $file['path'] = PATH_PROJETO . 'public/assets/img/uploads/' . $nomeArquivo;
+      $file['url'] = URL . '/assets/img/uploads/' . $nomeArquivo;
+    }
+
+    return $files;
+  }
 }
