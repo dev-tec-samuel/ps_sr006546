@@ -13,7 +13,7 @@ class Categoria extends DAO
   #[Campo(label: 'Cód. Categoria', pk: true, nn: true, auto: true)]
   protected $idCategoria;
 
-  #[Campo(label: 'Nome', nn: true)]
+  #[Campo(label: 'Nome', nn: true, order:true)]
   protected $nome;
 
   #[Campo(label: 'Descrição')]

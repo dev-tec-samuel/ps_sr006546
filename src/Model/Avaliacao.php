@@ -17,7 +17,7 @@ class Avaliacao extends DAO
   #[Campo(label: 'Cód. Cliente', nn: true)]
   protected $idCliente;
 
-  #[Campo(label: 'Nota da avaliação', nn: true)]
+  #[Campo(label: 'Nota da avaliação', nn: true, order:true)]
   protected $nota;
 
   #[Campo(label: 'Comentário da avaliação')]

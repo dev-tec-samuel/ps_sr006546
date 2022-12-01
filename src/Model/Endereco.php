@@ -17,7 +17,7 @@ class Endereco extends DAO
   #[Campo(label: 'CEP do endereco', nn: true)]
   protected $cep;
 
-  #[Campo(label: 'Cidade do endereco', nn: true)]
+  #[Campo(label: 'Cidade do endereco', nn: true, order:true)]
   protected $cidade;
 
   #[Campo(label: 'Estado do endereco', nn: true)]

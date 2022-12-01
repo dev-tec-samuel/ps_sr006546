@@ -8,7 +8,7 @@ use Petshop\Core\DAO;
 #[Entidade(name: 'vendas')]
 class Venda extends DAO
 {
-  #[Campo(label: 'Cód. Venda', pk: true, nn: true, auto: true)]
+  #[Campo(label: 'Cód. Venda', pk: true, nn: true, auto: true, order:true)]
   protected $idVenda;
 
   #[Campo(label: 'Cód. Carrinho', pk: true, nn: true)]

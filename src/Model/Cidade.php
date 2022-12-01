@@ -11,7 +11,7 @@ class Cidade extends DAO
   #[Campo(label: 'Cód. Cidade', pk: true, nn: true, auto: true)]
   protected $idCidade;
 
-  #[Campo(label: 'Unidade Federativa', nn: true)]
+  #[Campo(label: 'Unidade Federativa', nn: true, order:true)]
   protected $uf;
 
   #[Campo(label: 'Cód. IBGE da cidade', nn: true)]

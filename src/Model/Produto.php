@@ -16,7 +16,7 @@ class Produto extends DAO
   #[Campo(label: 'Cód. Marca', nn: true)]
   protected $idMarca;
 
-  #[Campo(label: 'Nome', nn: true)]
+  #[Campo(label: 'Nome', nn: true, order:true)]
   protected $nome;
 
   #[Campo(label: 'Tipo', nn: true)]

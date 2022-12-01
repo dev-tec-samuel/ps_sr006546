@@ -17,7 +17,7 @@ class Comentario extends DAO
   #[Campo(label: 'Cód. Cliente', nn: true)]
   protected $idCliente;
 
-  #[Campo(label: 'Tipo do comentário', nn: true)]
+  #[Campo(label: 'Tipo do comentário', nn: true, order:true)]
   protected $tipo;
 
   #[Campo(label: 'Dedscrição do comentário', nn: true)]
