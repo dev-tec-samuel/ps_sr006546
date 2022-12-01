@@ -83,7 +83,7 @@ class Render
 
     if (!file_exists($pathPagina)) {
       error_log('Página template não localizada em: ' . $pathPagina);
-      throw new Exception("A página solicitada ''{$pagina} não foi localizada");
+      throw new Exception("A página solicitada '{$pagina}' não foi localizada");
     }
 
     $dados['nomesite'] = BACKEND_TITLE;
