@@ -13,6 +13,7 @@ class AdminClienteController
     //alimentando dados para a tabela de listagem
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Cliente();
+    $dadosListagem['imagens']  = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idcliente',  'class' => 'text-center'],
       ['campo' => 'tipo',       'class' => 'text-center'],

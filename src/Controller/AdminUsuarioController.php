@@ -13,6 +13,7 @@ class AdminUsuarioController
     //alimentando dados para a tabela de listagem
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Usuario();
+    $dadosListagem['imagens']  = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idusuario',  'class' => 'text-center'],
       ['campo' => 'tipo',       'class' => 'text-center'],
