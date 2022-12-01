@@ -27,7 +27,7 @@ abstract class DAO
     if (method_exists($this, $metodoProcurado)) {
       return $this->$metodoProcurado();
     } else {
-      throw new Exception("O atributo {$name} não tem método 'get' assciado");
+      throw new Exception("O atributo {$name} não tem método 'get' associado");
     }
   }
 
