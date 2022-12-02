@@ -11,7 +11,8 @@ if (empty($cliente)) {
   $opcaoLogin = <<<HTML
       <div class="dropdown">
         <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-          <i class="bi bi-person fs-3 pe-1"></i>
+          <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+          <lord-icon src="https://cdn.lordicon.com/bhfjfgqz.json" trigger="hover" colors="primary:#ffffff" style="width:30px;height:30px;padding-top:7px;margin:3px"></lord-icon>
           Olá <strong>{$cliente['prinome']}</strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark border-light">
@@ -49,10 +50,14 @@ if (empty($cliente)) {
         </div>
         <div class="col-4 d-flex justify-content-between">
           <a href="/favoritos" title="Ver meus favoritos" class="px-3">
-            <i class="bi bi-box2-heart fs-3"></i>
+            <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/pnhskdva.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px">
+            </lord-icon>
           </a>
           <a href="/carrinho" title="Ver meu carrinho" class="px-3">
-            <i class="bi bi-bag-check fs-3"></i>
+            <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/medpcfcy.json" trigger="hover" colors="primary:#ffffff" style="width:40px;height:40px">
+            </lord-icon>
           </a>
         </div>
       </div>
@@ -68,19 +73,25 @@ if (empty($cliente)) {
       <div class="topo-site-inferior-contatos col-6 row">
         <div class="col-auto d-flex align-items-center">
           <a href="/nossas-lojas" title="Conheça as nossas lojas">
-            <i class="bi bi-shop pe-1"></i>
+            <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/osuxyevn.json" trigger="hover" colors="primary:#ffffff" style="width:25px;height:25px;padding-top:7px">
+            </lord-icon>
             <span>Nossas lojas</span>
           </a>
         </div>
         <div class="col-auto d-flex align-items-center">
           <a href="/fale-conosco" title="Fale conosco">
-            <i class="bi bi-megaphone pe-1"></i>
+            <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+            <lord-icon src="https://cdn.lordicon.com/hpivxauj.json" trigger="hover" colors="primary:#ffffff" style="width:25px;height:25px;padding-top:7px">
+            </lord-icon>
             <span>Fale conosco</span>
           </a>
         </div>
       </div>
       <div class="topo-site-inferior-fone col-4 d-flex align-items-center justify-content-end">
-        <i class="bi bi-telephone pe-2"></i>
+        <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/ssvybplt.json" trigger="hover" colors="primary:#ffffff" style="width:25px;height:25px;">
+        </lord-icon>
         <span><?= $telefone1 ?? '' ?></span>
       </div>
     </div>

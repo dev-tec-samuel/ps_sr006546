@@ -30,7 +30,9 @@
               <a href="#">
                 <div class="row d-flex align-items-center">
                   <div class="col-4 ">
-                    <i class="bi bi-credit-card fs-1 ps-2 text-dark"></i>
+                    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/zqxjldws.json" trigger="hover" colors="primary:#000000" style="width:60px;height:60px">
+                    </lord-icon>
                   </div>
                   <div class="col-8">
                     <span>Todos os produto em até <b>4x SEM JUROS</b></span>
@@ -48,7 +50,9 @@
               <a href="#">
                 <div class="row d-flex align-items-center">
                   <div class="col-4 ">
-                    <i class="bi bi-bag-heart fs-1 ps-2 text-dark"></i>
+                    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/ifqmqwui.json" trigger="hover" colors="primary:#000000" style="width:60px;height:60px">
+                    </lord-icon>
                   </div>
                   <div class="col-8">
                     <span><b>Compre com recorrência</b> e ganhe 10% off</span>
@@ -66,7 +70,9 @@
               <a href="#">
                 <div class="row d-flex align-items-center">
                   <div class="col-4 ">
-                    <i class="bi bi-check-circle fs-1 ps-2 text-dark"></i>
+                    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/egiwmiit.json" trigger="hover" colors="primary:#000000" style="width:60px;height:60px">
+                    </lord-icon>
                   </div>
                   <div class="col-8">
                     <span>Produtos de marcas que contenham <b>selo de qualidade</b></span>
@@ -84,7 +90,9 @@
               <a href="#">
                 <div class="row d-flex align-items-center">
                   <div class="col-4 ">
-                    <i class="bi bi-truck fs-1 ps-2 text-dark"></i>
+                    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
+                    <lord-icon src="https://cdn.lordicon.com/rzsdhkun.json" trigger="hover" colors="primary:#000000" style="width:60px;height:60px">
+                    </lord-icon>
                   </div>
                   <div class="col-8">
                     <span><b>Política de frete grátis...</b> Venha conhecer as regras</span>
