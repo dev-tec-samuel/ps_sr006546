@@ -14,7 +14,7 @@
   <!-- SWEET ALERT  -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- ANIMATED.CSS -->
-  <linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- SLICK CSS -->
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
