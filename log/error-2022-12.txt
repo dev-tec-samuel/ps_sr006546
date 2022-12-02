@@ -1,0 +1,69 @@
+[01-Dec-2022 20:08:58 America/Sao_Paulo] PHP Fatal error:  Uncaught Petshop\Core\Exception: O atributo  não tem método 'get' assciado in C:\xampp\htdocs\projeto01\src\Core\DAO.php:30
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Controller\AdminImagemController.php(39): Petshop\Core\DAO->__get('')
+#1 [internal function]: Petshop\Controller\AdminImagemController->listar('Produto', '4')
+#2 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#5 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#6 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#7 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DAO.php on line 30
+[01-Dec-2022 20:38:29 America/Sao_Paulo] Página template não localizada em: C:\xampp\htdocs\projeto01\config/../templates/backend/pages/iamgens.php
+[01-Dec-2022 20:38:29 America/Sao_Paulo] PHP Fatal error:  Uncaught Petshop\Core\Exception: A página solicitada ''iamgens não foi localizada in C:\xampp\htdocs\projeto01\src\View\Render.php:86
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Controller\AdminImagemController.php(73): Petshop\View\Render::back('iamgens', Array)
+#1 [internal function]: Petshop\Controller\AdminImagemController->form('Produto', '4', 'add')
+#2 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#5 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#6 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#7 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\View\Render.php on line 86
+[01-Dec-2022 20:39:47 America/Sao_Paulo] Página template não localizada em: C:\xampp\htdocs\projeto01\config/../templates/backend/pages/iamgens.php
+[01-Dec-2022 20:39:47 America/Sao_Paulo] PHP Fatal error:  Uncaught Petshop\Core\Exception: A página solicitada 'iamgens' não foi localizada in C:\xampp\htdocs\projeto01\src\View\Render.php:86
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Controller\AdminImagemController.php(73): Petshop\View\Render::back('iamgens', Array)
+#1 [internal function]: Petshop\Controller\AdminImagemController->form('Produto', '4', 'add')
+#2 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#5 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#6 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#7 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\View\Render.php on line 86
+[01-Dec-2022 21:42:19 America/Sao_Paulo] ERRO PDO: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ps_sr006546.produto' doesn't exist, na LINHA: 67
+SELECT p.idproduto, p.nome, p.preco, m.marca idmarca, c.nome idcategoria
+            FROM PRODUTO p
+            INNER JOIN marcas m ON m.idmarca = p.idmarca
+            INNER JOIN categorias c ON c.idcategoria = p.idcategoria
+              ORDER BY p.nome
+Parâmetro: 
+array (
+)
+[01-Dec-2022 21:42:19 America/Sao_Paulo] PHP Fatal error:  Uncaught Exception: Falha ao executar comando no banco de dados in C:\xampp\htdocs\projeto01\src\Core\DB.php:91
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\DB.php(52): Petshop\Core\DB::query('SELECT p.idprod...', Array)
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminProdutoController.php(22): Petshop\Core\DB::select('SELECT p.idprod...')
+#2 [internal function]: Petshop\Controller\AdminProdutoController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Core\DB.php on line 91
+[01-Dec-2022 21:42:56 America/Sao_Paulo] PHP Warning:  foreach() argument must be of type array|object, bool given in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 35
+[01-Dec-2022 21:42:56 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: count(): Argument #1 ($value) must be of type Countable|array, bool given in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php:93
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\View\Render.php(65): require_once()
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminProdutoController.php(36): Petshop\View\Render::block('tabela-admin', Array)
+#2 [internal function]: Petshop\Controller\AdminProdutoController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 93

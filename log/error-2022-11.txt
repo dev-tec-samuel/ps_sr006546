@@ -182,3 +182,218 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\projeto01\public\index.php on line 27
+[18-Nov-2022 20:04:12 America/Sao_Paulo] O bloco nÃ£o foi localizado em: C:\xampp\htdocs\projeto01\config/../templates/frontend/blocks/rosape.php
+[18-Nov-2022 20:04:12 America/Sao_Paulo] PHP Fatal error:  Uncaught Petshop\Core\Exception: O bloco solicitado 'rosape' nÃ£o foi localizada in C:\xampp\htdocs\projeto01\src\View\Render.php:54
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\FrontController.php(32): Petshop\View\Render::block('rosape', Array)
+#1 C:\xampp\htdocs\projeto01\src\Controller\HomeController.php(19): Petshop\Core\FrontController->carregaHTMLRodape()
+#2 [internal function]: Petshop\Controller\HomeController->index()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(33): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\View\Render.php on line 54
+[21-Nov-2022 20:35:33 America/Sao_Paulo] PHP Fatal error:  Uncaught ValueError: hash_hmac(): Argument #1 ($algo) must be a valid cryptographic hashing algorithm in C:\xampp\htdocs\projeto01\src\Model\Cliente.php:119
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Model\Cliente.php(119): hash_hmac('mds', '12345', '123ABC')
+#1 C:\xampp\htdocs\projeto01\src\Core\DAO.php(45): Petshop\Model\Cliente->setSenha('12345')
+#2 C:\xampp\htdocs\projeto01\src\Controller\CadastroController.php(29): Petshop\Core\DAO->__set('senha', '12345')
+#3 [internal function]: Petshop\Controller\CadastroController->postCadastro()
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#6 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#7 C:\xampp\htdocs\projeto01\src\Core\App.php(36): Bramus\Router\Router->run()
+#8 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#9 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Cliente.php on line 119
+[21-Nov-2022 20:36:09 America/Sao_Paulo] PHP Fatal error:  Uncaught Petshop\Core\Exception: Documento informado Ã© invÃ¡lido in C:\xampp\htdocs\projeto01\src\Model\Cliente.php:76
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Core\DAO.php(45): Petshop\Model\Cliente->setCpfCnpj('043501360290')
+#1 C:\xampp\htdocs\projeto01\src\Controller\CadastroController.php(26): Petshop\Core\DAO->__set('cpfcnpj', '043501360290')
+#2 [internal function]: Petshop\Controller\CadastroController->postCadastro()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(36): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Cliente.php on line 76
+[21-Nov-2022 21:04:13 America/Sao_Paulo] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 15
+[21-Nov-2022 21:20:44 America/Sao_Paulo] PHP Fatal error:  Uncaught ValueError: hash_hmac(): Argument #1 ($algo) must be a valid cryptographic hashing algorithm in C:\xampp\htdocs\projeto01\src\Model\Cliente.php:124
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\Model\Cliente.php(124): hash_hmac('mds', '123456', '123ABC')
+#1 C:\xampp\htdocs\projeto01\src\Core\DAO.php(45): Petshop\Model\Cliente->setSenha('123456')
+#2 C:\xampp\htdocs\projeto01\src\Controller\CadastroController.php(31): Petshop\Core\DAO->__set('senha', '123456')
+#3 [internal function]: Petshop\Controller\CadastroController->postCadastro()
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#6 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#7 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#8 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#9 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Model\Cliente.php on line 124
+[21-Nov-2022 21:45:45 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\src\Controller\CadastroController.php on line 51
+[21-Nov-2022 21:47:24 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\src\Controller\CadastroController.php on line 51
+[21-Nov-2022 21:50:29 America/Sao_Paulo] PHP Warning:  Undefined global variable $_SESSION in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 12
+[22-Nov-2022 20:04:55 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[22-Nov-2022 20:54:30 America/Sao_Paulo] PHP Warning:  Undefined variable $cliente in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:30 America/Sao_Paulo] PHP Warning:  Undefined variable $cliente in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:30 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:32 America/Sao_Paulo] PHP Warning:  Undefined variable $cliente in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:32 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:42 America/Sao_Paulo] PHP Warning:  Undefined variable $cliente in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:42 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:42 America/Sao_Paulo] PHP Warning:  Undefined variable $cliente in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[22-Nov-2022 20:54:42 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\frontend\blocks\topo.php on line 15
+[24-Nov-2022 19:30:26 America/Sao_Paulo] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:30:26 America/Sao_Paulo] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:30:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Controller\v" not found in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php:12
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Petshop\\Control...')
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(472): ReflectionMethod->__construct('\\Petshop\\Contro...', 'faleConosco')
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 12
+[24-Nov-2022 19:32:07 America/Sao_Paulo] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:32:07 America/Sao_Paulo] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:32:07 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Controller\v" not found in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php:12
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Petshop\\Control...')
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(472): ReflectionMethod->__construct('\\Petshop\\Contro...', 'faleConosco')
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 12
+[24-Nov-2022 19:32:10 America/Sao_Paulo] PHP Warning:  Undefined variable $email in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:32:10 America/Sao_Paulo] PHP Deprecated:  strtolower(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 10
+[24-Nov-2022 19:32:10 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Controller\v" not found in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php:12
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\projeto01\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('Petshop\\Control...')
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(472): ReflectionMethod->__construct('\\Petshop\\Contro...', 'faleConosco')
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 12
+[24-Nov-2022 19:34:32 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Class "Petshop\Controller\v" not found in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php:42
+Stack trace:
+#0 [internal function]: Petshop\Controller\FaleConoscoController->postFaleConosco()
+#1 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#4 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#5 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#6 {main}
+  thrown in C:\xampp\htdocs\projeto01\src\Controller\FaleConoscoController.php on line 42
+[24-Nov-2022 19:35:24 America/Sao_Paulo] Erro de e-mail: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`ssl.s1394.sureserver.com' did not match expected CN=`smtp.gamil.com'SMTP server error: QUIT command failed Detail: ê%X PNca¹¬ÉÓÿh®·s\„Ş/xÌß5ø”2Ì•Ln
+[24-Nov-2022 19:35:24 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[24-Nov-2022 19:37:44 America/Sao_Paulo] Erro de e-mail: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`ssl.s1394.sureserver.com' did not match expected CN=`smtp.gamil.com'SMTP server error: QUIT command failed Detail: ú=¶ñå.•âFÚÍ£?záXÃë]üM 
+"„ Ò†(oL_ú6°[UÚ€0ë´Ú_–=ØzŸçãíU9â)ªÒAQZVm”¹Hğº×ğ0	c–Ûšš!%T¢ƒœVKÓjë4Õn¬x½$ÄùÚ`-¹Ûº/<…[Å»EXlMÌ¦aá²Ş©Ğ¥4§ï©dAÆIeÓÇO+õ¯
+[24-Nov-2022 19:37:44 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[24-Nov-2022 19:37:56 America/Sao_Paulo] Erro de e-mail: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`ssl.s1394.sureserver.com' did not match expected CN=`smtp.gamil.com'SMTP server error: QUIT command failed Detail: ê&o(m·×C×†ÏÅÆô9äA:°¢Üa·¶Í©bë§ëHræ.ŒÃ[Û[«E¿^µv2E9·¾Ü@"ƒ€_•^/À50êëÇ$
+[24-Nov-2022 19:37:56 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[24-Nov-2022 19:39:45 America/Sao_Paulo] Erro de e-mail: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`ssl.s1394.sureserver.com' did not match expected CN=`smtp.gamil.com'SMTP server error: QUIT command failed Detail: ú2Üüw8°ÔKÙñ¢^OU@/4%ƒøøø4ÄÒ§€Ilg‡&ƒØì}‰z˜Üº<·®9¾Ì€_ÉÀU~Z›šüHX?‘¢Ãœ/¤HHÛTÃ¼Y/a&¡ĞÒñp 0&5ßí%´·îçıÙJÎr¿`eV¥ØrãJã´mŠÖ-°:µ•$â:ÿOa,÷İ­šZˆ 1Âÿßó4°–K
+›uİÈù×q{_L>1wŸıŞA„Bó!¥ÿÀäKT	X2zœj#Ò©BgÀn®@cZé˜}g£c{ıã;’†œ‹¼@3W\*¨ùuNŞÈq
+[24-Nov-2022 19:39:45 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[24-Nov-2022 19:42:29 America/Sao_Paulo] Erro de e-mail: SMTP Error: Could not connect to SMTP host. Connection failed. stream_socket_enable_crypto(): Peer certificate CN=`ssl.s1394.sureserver.com' did not match expected CN=`smtp.gamil.com'SMTP server error: QUIT command failed Detail: ú£´²
+08¼èjD©99q'IBñVÔê+ñ«zˆÌã|Œ—:¥ir`5Fú¦k?SläÆmh¨œyÇÂnÉ%íÙ-+^®ù,·õm	|X´âØuÏ½êb¨•›ÓËÌ''£_‹ãù.LÔ²@§§|V˜§¥ÔoòÎçkÕÆwzzñŒ¤q«ñÖ:H!}H^»bB;ÉÎ&ÄS&‹—TÙÉ°û*&Êûñ|¢€.¸a:ï	»İµĞ&ñì^2¥ê›¡·‰!g>7€–Ş¬€A%¾ÃLÂl!û+Ü÷^ŸUê¡{9?ÔLÓ/ªµc¢
+[24-Nov-2022 19:42:29 America/Sao_Paulo] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\projeto01\templates\frontend\common\top.php:26) in C:\xampp\htdocs\projeto01\resources\funcoes.php on line 47
+[25-Nov-2022 19:23:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\projeto01\src\Core\App.php on line 75
+[25-Nov-2022 19:23:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected token "}" in C:\xampp\htdocs\projeto01\src\Core\App.php on line 75
+[25-Nov-2022 19:39:11 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlColunas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 5
+[25-Nov-2022 19:39:11 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlLinhas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 9
+[25-Nov-2022 19:49:38 America/Sao_Paulo] PHP Warning:  Undefined variable $obejto in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:49:38 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getFields() on null in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php:3
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\View\Render.php(65): require_once()
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminClienteController.php(21): Petshop\View\Render::block('tabela-admin', Array)
+#2 [internal function]: Petshop\Controller\AdminClienteController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:49:42 America/Sao_Paulo] PHP Warning:  Undefined variable $obejto in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:49:42 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getFields() on null in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php:3
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\View\Render.php(65): require_once()
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminClienteController.php(21): Petshop\View\Render::block('tabela-admin', Array)
+#2 [internal function]: Petshop\Controller\AdminClienteController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:50:54 America/Sao_Paulo] PHP Warning:  Undefined variable $obejto in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:50:54 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getFields() on null in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php:3
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\View\Render.php(65): require_once()
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminClienteController.php(21): Petshop\View\Render::block('tabela-admin', Array)
+#2 [internal function]: Petshop\Controller\AdminClienteController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:52:26 America/Sao_Paulo] PHP Warning:  Undefined variable $obejto in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:52:26 America/Sao_Paulo] PHP Fatal error:  Uncaught Error: Call to a member function getFields() on null in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php:3
+Stack trace:
+#0 C:\xampp\htdocs\projeto01\src\View\Render.php(65): require_once()
+#1 C:\xampp\htdocs\projeto01\src\Controller\AdminClienteController.php(21): Petshop\View\Render::block('tabela-admin', Array)
+#2 [internal function]: Petshop\Controller\AdminClienteController->listar()
+#3 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(482): call_user_func_array(Array, Array)
+#4 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(440): Bramus\Router\Router->invoke('\\Petshop\\Contro...', Array)
+#5 C:\xampp\htdocs\projeto01\vendor\bramus\router\src\Bramus\Router\Router.php(287): Bramus\Router\Router->handle(Array, true)
+#6 C:\xampp\htdocs\projeto01\src\Core\App.php(39): Bramus\Router\Router->run()
+#7 C:\xampp\htdocs\projeto01\public\index.php(7): Petshop\Core\App::start()
+#8 {main}
+  thrown in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 3
+[25-Nov-2022 19:52:47 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlColunas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 11
+[25-Nov-2022 19:52:47 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlLinhas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 15
+[25-Nov-2022 19:53:11 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlColunas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 11
+[25-Nov-2022 19:53:11 America/Sao_Paulo] PHP Warning:  Undefined variable $htmlLinhas in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 15
+[25-Nov-2022 20:27:30 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected token "<<" in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 46
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:00 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[25-Nov-2022 21:12:12 America/Sao_Paulo] PHP Warning:  Undefined array key "type" in C:\xampp\htdocs\projeto01\templates\blocks\form.php on line 24
+[28-Nov-2022 21:13:49 America/Sao_Paulo] PHP Warning:  Undefined array key "idcategoria" in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 9
+[28-Nov-2022 21:13:49 America/Sao_Paulo] PHP Warning:  Trying to access array offset on value of type null in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 14
+[28-Nov-2022 21:13:49 America/Sao_Paulo] PHP Warning:  Undefined array key "idavaliacao" in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 44
+[29-Nov-2022 19:59:08 America/Sao_Paulo] PHP Warning:  Undefined variable $ in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 66
+[29-Nov-2022 19:59:08 America/Sao_Paulo] PHP Warning:  Undefined variable $ in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 66
+[29-Nov-2022 19:59:08 America/Sao_Paulo] PHP Warning:  Undefined variable $ in C:\xampp\htdocs\projeto01\templates\blocks\tabela-admin.php on line 66
+[29-Nov-2022 21:05:36 America/Sao_Paulo] PHP Warning:  Undefined array key "documento" in C:\xampp\htdocs\projeto01\templates\frontend\pages\meus-dados.php on line 13
