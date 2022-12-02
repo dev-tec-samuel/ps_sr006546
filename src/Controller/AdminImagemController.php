@@ -37,7 +37,7 @@ class AdminImagemController
     $dados = [];
     $dados['titulo'] = 'Imagens - Listagem';
     $campoOrdenacao = $objetoComFiguras->getOrderByField();
-    $dados['registroAlvo'] = $model . ': <u class="d-inline-block mb-1">>' . $objetoComFiguras->$campoOrdenacao . '</u>';
+    $dados['registroAlvo'] = $model . ': <u class="d-inline-block mb-1">' . $objetoComFiguras->$campoOrdenacao . '</u>';
     $dados['usuario'] = $_SESSION['usuario'];
     $dados['tabela'] = $htmlTabela;
 
