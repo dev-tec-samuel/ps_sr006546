@@ -13,8 +13,11 @@ class Produto extends DAO
   #[Campo(label: 'Cód. Produto', pk: true, nn: true, auto: true)]
   protected $idProduto;
 
-  #[Campo(label: 'Cód. Marca', nn: true)]
+  #[Campo(label: 'Marca', nn: true, fk:true)]
   protected $idMarca;
+
+  #[Campo(label: 'Categoria', nn: true, fk:true)]
+  protected $idCategoria;
 
   #[Campo(label: 'Nome', nn: true, order:true)]
   protected $nome;
@@ -60,7 +63,7 @@ class Produto extends DAO
 
   public function getIdMarca()
   {
-    return $this->idMarca;
+    return $this->idCategoria;
   }
 
   public function setIdMarca(string $idMarca): self
@@ -73,6 +76,23 @@ class Produto extends DAO
     $this->idMarca = $idMarca;
     return $this;
   }
+
+  public function getIdCategoria()
+  {
+    return $this->idMarca;
+  }
+
+  public function setIdCategoria(string $idCategoria): self
+  {
+    $objCategoria = new Categoria;
+    if (!$objCategoria->loadById($idCategoria)) {
+      throw new Exception('A csategoria informada é inválida');
+    }
+
+    $this->idCategoria = $idCategoria;
+    return $this;
+  }
+
 
   public function getNome()
   {

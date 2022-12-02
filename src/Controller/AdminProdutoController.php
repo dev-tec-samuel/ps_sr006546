@@ -2,7 +2,9 @@
 
 namespace Petshop\Controller;
 
+use Petshop\Core\DB;
 use Petshop\Core\Exception;
+use Petshop\Model\Categoria;
 use Petshop\Model\Marca;
 use Petshop\Model\Produto;
 use Petshop\View\Render;
@@ -11,17 +13,26 @@ class AdminProdutoController
 {
   public function listar()
   {
+
+    $sql = 'SELECT p.idproduto, p.nome, m.marca idmarca, c.nome idcategoria,
+                  FORMAT(p.preco, 2, "pt_br") preco
+            FROM produtos p
+            INNER JOIN marcas m ON m.idmarca = p.idmarca
+            INNER JOIN categorias c ON c.idcategoria = p.idcategoria
+              ORDER BY p.nome';
+    $rows = DB::select($sql);
+
     //alimentando dados para a tabela de listagem
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Produto();
+    $dadosListagem['rows']  = $rows;
     $dadosListagem['imagens']  = true;
     $dadosListagem['colunas'] = [
-      ['campo' => 'idproduto',  'class' => 'text-center'],
-      ['campo' => 'tipo',       'class' => 'text-center'],
-      ['campo' => 'preco',      'class' => 'text-center'],
-      ['campo' => 'quantidade', 'class' => 'text-center'],
-      ['campo' => 'descricao'],
-      ['campo' => 'created_at', 'class' => 'text-center'],
+      ['campo' => 'idproduto',    'class' => 'text-center'],
+      ['campo' => 'idmarca',      'class' => 'text-center'],
+      ['campo' => 'idcategoria',  'class' => 'text-center'],
+      ['campo' => 'nome',         'class' => 'w-50'],
+      ['campo' => 'preco',        'class' => 'text-center'],
     ];
     $htmlTabela = Render::block('tabela-admin', $dadosListagem);
 
@@ -100,14 +111,19 @@ class AdminProdutoController
     foreach($marcas as $m) {
       $optionsMarca[] = ['value'=>$m['idmarca'], 'label'=>$m['marca']];
     }
+
+    $categorias = (new Categoria)->find();
+    $optionsCategoria = [];
+    foreach($categorias as $c) {
+      $optionsCategoria[] = ['value'=>$c['idcategoria'], 'label'=>$c['nome']];
+    }
     $dados = [
       'btn_class' => 'btn btn-warning px-5 mt-5',
       'btn_label' => ($novo ? 'Adicionar' : 'Atualizar'),
       'fields' => [
-        ['type' => 'readonly', 'name' => 'idproduto', 'class' => 'col-2', 'label' => 'Id. Produto'],
-        ['type' => 'select', 'name' => 'idmarca', 'class' => 'col-2', 'label' => 'Id. Marca', 'required'=>true, 
-            'options'=>$optionsMarca
-        ],
+        ['type' => 'readonly', 'name' => 'idproduto', 'class' => 'col-3', 'label' => 'Id. Produto'],
+        ['type' => 'select', 'name' => 'idmarca', 'class' => 'col-3', 'label' => 'Marca', 'required'=>true, 'options'=>$optionsMarca],
+        ['type' => 'select', 'name' => 'idcategoria', 'class' => 'col-3', 'label' => 'Categoria', 'required'=>true, 'options'=>$optionsCategoria],
         ['type' => 'text', 'name' => 'nome', 'class' => 'col-3', 'label' => 'Nome', 'required'=>true],
         ['type' => 'select', 'name' => 'tipo', 'class' => 'col-4', 'label' => 'Tipo', 'required'=>true, 
           'options'=>[
@@ -120,12 +136,12 @@ class AdminProdutoController
         ],
         ['type' => 'text', 'name' => 'preco', 'class' => 'col-4', 'label' => 'Preço', 'required'=>true],
         ['type' => 'text', 'name' => 'quantidade', 'class' => 'col-4', 'label' => 'Quantidade', 'required'=>true],
-        ['type' => 'text', 'name' => 'largura', 'class' => 'col-4', 'label' => 'Largura'],
-        ['type' => 'text', 'name' => 'altura', 'class' => 'col-4', 'label' => 'Altura'],
-        ['type' => 'text', 'name' => 'profundidade', 'class' => 'col-4', 'label' => 'Profundidade'],
-        ['type' => 'text', 'name' => 'peso', 'class' => 'col-4', 'label' => 'Peso'],
-        ['type' => 'text', 'name' => 'descricao', 'class' => 'col-4', 'label' => 'Descrição'],
-        ['type' => 'text', 'name' => 'especificadores', 'class' => 'col-3', 'label' => 'Especificadores'],
+        ['type' => 'text', 'name' => 'largura', 'class' => 'col-3', 'label' => 'Largura'],
+        ['type' => 'text', 'name' => 'altura', 'class' => 'col-3', 'label' => 'Altura'],
+        ['type' => 'text', 'name' => 'profundidade', 'class' => 'col-3', 'label' => 'Profundidade'],
+        ['type' => 'text', 'name' => 'peso', 'class' => 'col-3', 'label' => 'Peso'],
+        ['type' => 'text-area', 'name' => 'descricao', 'class' => 'col-12', 'label' => 'Descrição', 'rows'=>'3'],
+        ['type' => 'text-area', 'name' => 'especificadores', 'class' => 'col-12', 'label' => 'Especificadores', 'rows'=>'3'],
         ['type' => 'readonly', 'name' => 'created_at', 'class' => 'col-3', 'label' => 'Criado em:'],
         ['type' => 'readonly', 'name' => 'updated_at', 'class' => 'col-3', 'label' => 'Atualizado em:'],
       ]
