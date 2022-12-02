@@ -2,6 +2,7 @@
 
 namespace Petshop\Controller;
 
+use Gumlet\ImageResize;
 use Petshop\Core\Exception;
 use Petshop\Model\Arquivo;
 use Petshop\View\Render;
@@ -11,7 +12,7 @@ class AdminImagemController
   public function listar($model, $idmodel)
   {
     $modelPath = "Petshop\\Model\\{$model}";
-    if(!class_exists($modelPath)) {
+    if (!class_exists($modelPath)) {
       redireciona('admin/dashboard', 'danger', 'Página não localizada. Classe de dados destino não definida');
     }
 
@@ -46,7 +47,7 @@ class AdminImagemController
   public function form($model, $idmodel, $valor)
   {
     $modelPath = "Petshop\\Model\\{$model}";
-    if(!class_exists($modelPath)) {
+    if (!class_exists($modelPath)) {
       redireciona('admin/dashboard', 'danger', 'Página não localizada. Classe de dados destino não definida');
     }
 
@@ -75,36 +76,71 @@ class AdminImagemController
 
   public function postForm($model, $idmodel, $valor)
   {
-    $objeto = new Categoria();
+    $objeto = new Arquivo();
 
     //se $valor tem um número, carrega dados relativos a ele
     if (is_numeric($valor)) {
       if (!$objeto->loadById($valor)) {
-        redireciona('/admin/categorias', 'danger', 'Link inválido, registro não localizado');
+        redireciona("/admin/imagens/{$model}/{$idmodel}", 'danger', 'Link inválido, registro não localizado');
       }
     }
 
     try {
-      
+      if (!empty($_FILES['arquivo']['name'])) {
+        $_POST['nome'] = $_FILES['arquivo']['name'];
+        $_POST['tipo']  = 'Imagem';
+      }
+
+      $modelPath = "Petshop\\Model\\{$model}";
+      if (!class_exists($modelPath)) {
+        redireciona('admin/dashboard', 'danger', 'Página não localizada. Classe de dados destino não definida');
+      }
+
+      //pega as informações do objeto do arquivo (nome da tablea, nome do campo chave e o valor chave do campo)
+      $objetoComFiguras = new $modelPath;
+      $objetoComFiguras->loadById($idmodel);
+      $tabela      = $objetoComFiguras->getTableName();
+      $tabelaChave = $objetoComFiguras->getPkName();
+      $_POST['tabela'] = "{$tabela}.{$tabelaChave}";
+      $_POST['tabelaid'] = $idmodel;
+
       $campos = array_change_key_case($objeto->getFields());
-      foreach($campos as $campo => $propriedades) {
-        if(isset($_POST[$campo])) {
+      foreach ($campos as $campo => $propriedades) {
+        if (isset($_POST[$campo])) {
           $objeto->$campo = $_POST[$campo];
         }
       }
 
       $objeto->save();
-      
-    } catch(Exception $e) {
+
+      //se foi enviado arquivo novo, mover para a pasta uploads com o id do arquivo com seu nome
+      if(!empty($_FILES['arquivo']['name'])) {
+        $nomeChave   = $objeto->getPkName();
+        $valorChave  = $objeto->$nomeChave;
+        $nomeArquivo = $valorChave . '.' . pathinfo($objeto->nome, PATHINFO_EXTENSION);
+        $pathArquivo = PATH_PROJETO . 'public/assets/img/uploads/' . $nomeArquivo;
+
+        if(!move_uploaded_file($_FILES['arquivo']['tmp_name'], $pathArquivo)) {
+          throw new Exception('Falha ao mover arquivo, verifique permissões');
+        }
+
+        rename($pathArquivo, $pathArquivo . '_original');
+        $image = new ImageResize($pathArquivo . '_original');
+        $image->crop(700,700);
+        $image->save($pathArquivo);
+        unlink($pathArquivo . '_original');
+      }
+
+    } catch (Exception $e) {
       $_SESSION['mensagem'] = [
-        'tipo'=>'warning',
-        'texto'=>$e->getMessage()
+        'tipo' => 'warning',
+        'texto' => $e->getMessage()
       ];
 
-      $this->form($valor);
+      $this->form($model, $idmodel, $valor);
       exit;
     }
-    redireciona('/admin/categorias', 'success', 'Alterações realizadas com SUCESSO');
+    redireciona("/admin/imagens/{$model}/{$idmodel}", 'success', 'Alterações realizadas com SUCESSO');
   }
 
   public function renderizaFormulario($novo)
@@ -116,9 +152,9 @@ class AdminImagemController
       'fields' => [
         ['type' => 'readonly', 'name' => 'idarquivo', 'class' => 'col-3', 'label' => 'Id. Arquivo'],
         ['type' => 'readonly', 'name' => 'nome', 'class' => 'col-4', 'label' => 'Nome do arquivo (automático)'],
-        ['type' => 'file', 'name' => 'arquivo', 'class' => 'col-5', 'label' => 'Arquivo', 'accept'=>'image/*'],
+        ['type' => 'file', 'name' => 'arquivo', 'class' => 'col-5', 'label' => 'Arquivo', 'accept' => 'image/*'],
         ['type' => 'readonly', 'name' => 'tipo', 'class' => 'col-2'],
-        ['type' => 'textarea', 'name' => 'descricao', 'class' => 'col-12', 'label' => 'Descrição', 'rows'=>'5'],
+        ['type' => 'text-area', 'name' => 'descricao', 'class' => 'col-12', 'label' => 'Descrição', 'rows' => '5'],
         ['type' => 'readonly', 'name' => 'created_at', 'class' => 'col-3', 'label' => 'Criado em:'],
         ['type' => 'readonly', 'name' => 'updated_at', 'class' => 'col-3', 'label' => 'Atualizado em:'],
       ]
