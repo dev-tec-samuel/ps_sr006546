@@ -27,6 +27,7 @@ class AdminProdutoController
     $dadosListagem['objeto']  = new Produto();
     $dadosListagem['rows']  = $rows;
     $dadosListagem['imagens']  = true;
+    $dadosListagem['remover'] = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idproduto',    'class' => 'text-center'],
       ['campo' => 'idmarca',      'class' => 'text-center'],

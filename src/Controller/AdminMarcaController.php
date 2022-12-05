@@ -14,6 +14,7 @@ class AdminMarcaController
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Marca();
     $dadosListagem['imagens']  = true;
+    $dadosListagem['remover'] = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idmarca',  'class' => 'text-center'],
       ['campo' => 'marca'],

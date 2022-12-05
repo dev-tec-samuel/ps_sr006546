@@ -14,6 +14,7 @@ class AdminClienteController
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Cliente();
     $dadosListagem['imagens']  = true;
+    $dadosListagem['remover'] = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idcliente',  'class' => 'text-center'],
       ['campo' => 'tipo',       'class' => 'text-center'],

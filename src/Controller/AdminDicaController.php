@@ -14,6 +14,7 @@ class AdminDicaController
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Dica();
     $dadosListagem['imagens']  = true;
+    $dadosListagem['remover'] = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'iddica',  'class' => 'text-center'],
       ['campo' => 'titulo'],

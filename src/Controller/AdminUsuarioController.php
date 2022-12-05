@@ -14,6 +14,7 @@ class AdminUsuarioController
     $dadosListagem = [];
     $dadosListagem['objeto']  = new Usuario();
     $dadosListagem['imagens']  = true;
+    $dadosListagem['remover'] = true;
     $dadosListagem['colunas'] = [
       ['campo' => 'idusuario',  'class' => 'text-center'],
       ['campo' => 'tipo',       'class' => 'text-center'],
@@ -52,7 +53,7 @@ class AdminUsuarioController
     $dados['usuario'] = $_SESSION['usuario'];
     $dados['formulario'] = $this->renderizaFormulario(empty($_POST));
 
-    Render::back('clientes', $dados);
+    Render::back('usuarios', $dados);
   }
 
   public function postForm($valor)
