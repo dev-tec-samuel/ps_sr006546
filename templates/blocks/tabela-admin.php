@@ -46,7 +46,7 @@ foreach ($rows as $row) {
   $valorChave = $row[$campoChave];
   $linkEdicao = "{$rotaAtual}/{$valorChave}";
   $btnEditar  = <<<HTML
-        <a href="{$linkEdicao}" class="text-danger text-decoration-none px-1" title="Editar registro">
+        <a href="{$linkEdicao}" class="text-warning text-decoration-none px-1" title="Editar registro">
           <i class="bi bi-pencil-square"></i>
         </a>
   HTML;
@@ -62,11 +62,23 @@ foreach ($rows as $row) {
         </a> 
     HTML;
   }
+  $btnExcluir  = '';
+  if (!empty($remover)) {
+    $model = pathinfo($objeto::class, PATHINFO_BASENAME);
+    $rotaExclusao = "/admin/remover/{$model}/{$valorChave}";
+
+    $btnExcluir = <<<HTML
+        <a href="{$rotaExclusao}" class="text-danger text-decoration-none px-1" title="Excluir registro">
+          <i class="bi bi-trash3-fill"></i>
+        </a> 
+    HTML;
+  }
 
   $htmlLinhas .= <<<HTML
         <td class="text-center">
           {$btnEditar}
           {$btnImagem}
+          {$btnExcluir}
         </td>
     </tr>
   HTML;
