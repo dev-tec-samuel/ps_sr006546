@@ -33,7 +33,9 @@ class AdminRemoveController
       $std = DB::query($sql, [$idmodel]);
 
       if($std->rowCount()) {
-        unlink($nomeArquivo??'');
+        if(!empty($nomeArquivo)) {
+          unlink($nomeArquivo);
+        }
         redireciona($urlOrigemClique, 'success', 'Registro removido com sucesso');
       }
 
