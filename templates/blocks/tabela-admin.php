@@ -68,7 +68,7 @@ foreach ($rows as $row) {
     $rotaExclusao = "/admin/remover/{$model}/{$valorChave}";
 
     $btnExcluir = <<<HTML
-        <a href="{$rotaExclusao}" class="text-danger text-decoration-none px-1" title="Excluir registro">
+        <a href="{$rotaExclusao}" class="link-excluir text-danger text-decoration-none px-1" title="Excluir registro">
           <i class="bi bi-trash3-fill"></i>
         </a> 
     HTML;
