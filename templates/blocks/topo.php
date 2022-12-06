@@ -24,6 +24,14 @@ if (empty($cliente)) {
       </div>
   HTML;
 }
+
+$categoriasListagem = '';
+
+foreach ($categorias ?? [] as $c) {
+  $categoriasListagem .= <<<HTML
+            <li><a href="/categorias/{$c['idcategoria']}" class="text-decoration-none"">{$c['nome']}</a></li>
+        HTML;
+}
 ?>
 
 <!-- Hack para o topo fixo não "comer" o conteúdo da página -->
@@ -100,12 +108,12 @@ if (empty($cliente)) {
 
 <div class="offcanvas offcanvas-start rounded-3 m-3" data-bs-scroll="true" tabindex="-1" id="offcanvas-menu" aria-labelledby="offcanvas-menuLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvas-menu">Categoria do site</h5>
+    <h5 class="offcanvas-title" id="offcanvas-menu">Categorias do site</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <p>Lista da categorias ex1</p>
-    <p>Lista da categorias ex2</p>
-    <p>Lista da categorias ex3</p>
+    <ul class="list-group">
+      <?= $categoriasListagem ?>
+    </ul>
   </div>
 </div>
