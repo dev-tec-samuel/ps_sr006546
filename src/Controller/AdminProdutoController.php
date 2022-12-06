@@ -142,7 +142,7 @@ class AdminProdutoController
         ['type' => 'text', 'name' => 'profundidade', 'class' => 'col-3', 'label' => 'Profundidade'],
         ['type' => 'text', 'name' => 'peso', 'class' => 'col-3', 'label' => 'Peso'],
         ['type' => 'text-area', 'name' => 'descricao', 'class' => 'col-12', 'label' => 'Descrição', 'rows'=>'3'],
-        ['type' => 'text-area', 'name' => 'especificadores', 'class' => 'col-12', 'label' => 'Especificadores', 'rows'=>'3'],
+        ['type' => 'text-area', 'name' => 'especificacoes', 'class' => 'col-12', 'label' => 'Especificadores', 'rows'=>'3'],
         ['type' => 'readonly', 'name' => 'created_at', 'class' => 'col-3', 'label' => 'Criado em:'],
         ['type' => 'readonly', 'name' => 'updated_at', 'class' => 'col-3', 'label' => 'Atualizado em:'],
       ]
