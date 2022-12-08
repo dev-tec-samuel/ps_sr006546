@@ -54,6 +54,7 @@ class App
     self::$router->get('/cadastro', '\Petshop\Controller\CadastroController@cadastro');
     self::$router->get('/meus-dados', '\Petshop\Controller\MeusDadosController@meusDados');
     self::$router->get('/fale-conosco', '\Petshop\Controller\FaleConoscoController@faleConosco');
+    self::$router->get('/categorias/{id}', '\Petshop\Controller\CategoriaController@listaProdutos');
 
     //ROTAS dos SETTERS
     self::$router->post('/login', '\Petshop\Controller\LoginController@postlogin');
@@ -79,6 +80,8 @@ class App
       self::$router->post('/', '\Petshop\Controller\AdminLoginController@postLogin');
 
       self::$router->get('/dashboard', '\Petshop\Controller\AdminDashboardController@index');
+
+      self::$router->get('/remover/(\w+)/(\d+)', '\Petshop\Controller\AdminRemoveController@remove');
 
       self::$router->get('/clientes', '\Petshop\Controller\AdminClienteController@listar');
       self::$router->get('/clientes/{valor}', '\Petshop\Controller\AdminClienteController@form');
