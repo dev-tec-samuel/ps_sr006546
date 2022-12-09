@@ -15,8 +15,7 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
             <?= $produto['nome'] ?>
           </div>
 
-          <div class="d-flex inline-block align-items-center">
-
+          <div class="info-porduto d-flex inline-block align-items-center">
             <div class="estrelas">
               <img alt="1" src="https://www.petz.com.br/novaLoja/images/star-fill.svg" title="Péssimo">
               <img alt="2" src="https://www.petz.com.br/novaLoja/images/star-fill.svg" title="Ruim">
@@ -30,12 +29,11 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
               <span> | </span>
               <span style="color:#3ba73d; font-weight:bold;"> Em estoque</span>
             </div>
-
           </div>
 
           <hr>
 
-          <div class="d-flex">
+          <div class="valor-produto d-flex">
             <span class="fs-1 fw-bold" style="color: #ff4500;">
               R$ <?= number_format($produto['preco'], 2, ',', '.') ?>
             </span>
@@ -49,7 +47,7 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
           <?php
           if ($produto['precodesconto'] > 80) :
           ?>
-            <div class="text-muted">
+            <div class="info-pagamento text-muted">
               <i class="bi bi-credit-card"></i>
               no cartão em até 8x de R$
               <?= number_format($produto['precodesconto'] / 8, 2, ',', '.') ?> <br>
@@ -59,7 +57,7 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
           endif;
           ?>
 
-          <div class="my-3 p-2 border border-1 rounded" style="background-color: #e9e9e9;">
+          <div class="info-desconto my-3 p-2 border border-1 rounded" style="background-color: #e9e9e9;">
             <div class="d-flex align-items-center">
               <div>
                 <span class="fs-5 fw-bold" style="color: #ff4500;">
@@ -88,9 +86,9 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
             </div>
           </div>
 
-          <div class="mt-4 row rodape-info">
+          <div class="rodape-info mt-4 row d-flex align-items-center">
 
-            <div class="ngcQtde">
+            <div class="ngcQtde col-3">
               <button class="btnQtde">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="14.5">
                   <path fill="#007dc5" d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"></path>
@@ -103,16 +101,19 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
                 </svg>
               </button>
             </div>
-
-            <!-- botão -->
-
-            <br>
+            <div class="btn-add_carrinho col-8">
+              <a href="/carrinho/<?= $produto['idproduto'] ?>/add" class="btn btn-success w-100" style="font-size:18px;">
+                <i class="bi bi-cart2 me-2"></i>Adicionar ao carrinho
+              </a>
+            </div>
           </div>
 
         </div>
 
       </div>
+
     </div>
+
   </div>
 
   <div class="row-mt-5">

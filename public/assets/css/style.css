@@ -96,8 +96,17 @@
   width: 20px;
 }
 
+.rodape-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  color: #262626;
+  height: 40px;
+}
+
 .rodape-info .ngcQtde {
-  margin-right: 36px;
+  margin-right: 20px;
   height: 40px;
   max-width: 100px;
 }
@@ -109,6 +118,7 @@
   border-radius: 5px;
   align-items: center;
   justify-content: center;
+  margin-left: 12px;
 }
 
 .ngcQtde .btnQtde {
@@ -136,14 +146,9 @@
   text-align: center;
 }
 
-.rodape-info {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  border: none;
-  background-color: #fff;
-  color: #262626;
-  height: 40px;
+.btn-add_carrinho:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
 }
 
 
