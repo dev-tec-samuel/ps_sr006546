@@ -55,6 +55,7 @@ class App
     self::$router->get('/meus-dados', '\Petshop\Controller\MeusDadosController@meusDados');
     self::$router->get('/fale-conosco', '\Petshop\Controller\FaleConoscoController@faleConosco');
     self::$router->get('/categorias/{id}', '\Petshop\Controller\CategoriaController@listaProdutos');
+    self::$router->get('/produtos/{id}', '\Petshop\Controller\ProdutoController@mostraProduto');
 
     //ROTAS dos SETTERS
     self::$router->post('/login', '\Petshop\Controller\LoginController@postlogin');

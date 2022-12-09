@@ -63,6 +63,90 @@
   margin-top: 5em;
 }
 
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  background: #bdbbbb 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 8px #0000001F;
+  opacity: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vantagens-assinatura li {
+  color: #ff4500;
+  font-size: 20px;
+}
+
+.vantagens-assinatura span {
+  color: black;
+  font-size: 16px;
+}
+
+
+/* criado esta classe de estilo devido ao fato de o bootstrap não conter mais este facilitador */
+.text-justify {
+  text-align: justify;
+}
+
+.estrelas img{
+  cursor: pointer; 
+  width: 20px;
+}
+
+.rodape-info .ngcQtde {
+  margin-right: 36px;
+  height: 40px;
+  max-width: 100px;
+}
+
+.ngcQtde {
+  border: 1px #d5d5d5 solid;
+  width: 40vw;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ngcQtde .btnQtde {
+  height: 35px;
+  width: 30%;
+  background: white;
+  border: none;
+  font-size: 38px;
+  color: #007dc5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rodape-info .ngcQtde .qtde {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.ngcQtde .qtde {
+  height: 100%;
+  width: 36%;
+  border: none;
+  font-size: 30px;
+  text-align: center;
+}
+
+.rodape-info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: none;
+  background-color: #fff;
+  color: #262626;
+  height: 40px;
+}
+
+
 /* ICONE DE ERRO 404
 .icon-generic {
   content: -webkit-image-set(
