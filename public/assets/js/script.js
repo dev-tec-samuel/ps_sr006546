@@ -1,7 +1,85 @@
-$('.carrousel').slick({
-  dots: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
+// $('.carrousel').slick({
+//   dots: true,
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   autoplay: true,
+//   autoplaySpeed: 2000,
+// });
+
+document.querySelectorAll('.curtir-produto').forEach(linkCurtir => {
+  linkCurtir.addEventListener('click', e => {
+    e.preventDefault();
+    let dadosPost = new FormData();
+    dadosPost.append('acao', 'curtir');
+    dadosPost.append('idproduto', linkCurtir.dataset.idproduto);
+    ajax('/ajax', dadosPost, function (resposta) {
+      if (resposta.status != 'success') {
+        Swal.fire({
+          icon: resposta.status,
+          title: 'Ops...',
+          text: resposta.mensagem
+        });
+        return;
+      }
+      //se deu tudo certo, executa o código abaixo
+      if (resposta.dados.curtiu) {
+        linkCurtir.querySelector('.icone-coracao').src = 'https://cdn.lordicon.com/xryjrepg.json';
+      } else {
+        linkCurtir.querySelector('.icone-coracao').src = 'https://cdn.lordicon.com/pnhskdva.json';
+      }
+    });
+  });
 });
+
+function ajax(url, dados, callback) {
+  if (!url || !dados || !callback) {
+    throw 'Todos os parâmetros devem ser preenchidos ';
+  }
+
+  let dadosCallback = {};
+  let xhr = new XMLHttpRequest();
+  xhr.open('POST', url);
+  xhr.onload = function () {
+    if (xhr.readyState == 4) {
+      if (xhr.status != 200) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'warning',
+          title: 'Falha na comunicação',
+          text: 'Ocorreu erro de conexão, por favor tente novamente. Se o erro persisitir contate o suporte.',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        return;
+      }
+
+      try {
+        dadosCallback = JSON.parse(xhr.responseText);
+      } catch (e) {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'warning',
+          title: 'Falha de processamento',
+          text: 'A resposta não pôde ser processada, tente novamente ou entre em contato com o suporte.',
+          showConfirmButton: false,
+          timer: 3000
+        });
+        return;
+      }
+
+      callback(dadosCallback);
+    }
+  };
+
+  xhr.onerror = function () {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Falha na comunicação',
+      text: 'Ocorreu erro de conexão, por favor tente novamente',
+      showConfirmButton: false,
+      timer: 3000
+    });
+  };
+  xhr.send(dados);
+}

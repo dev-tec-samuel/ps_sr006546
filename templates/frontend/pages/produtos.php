@@ -37,9 +37,12 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
             <span class="fs-1 fw-bold" style="color: #ff4500;">
               R$ <?= number_format($produto['preco'], 2, ',', '.') ?>
             </span>
-            <a href="#" class="icon-circle fs-4 text-danger p-2 ms-auto" title="Favoritar este produto">
+            <a href="#" 
+              class="curtir-produto icon-circle fs-4 text-danger p-2 ms-auto" 
+              data-idproduto="<?=$produto['idproduto']?>" 
+              title="Favoritar este produto">
               <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
-              <lord-icon src="https://cdn.lordicon.com/pnhskdva.json" trigger="hover" colors="primary:#000000" style="width:40px;height:40px">
+              <lord-icon class="icone-coracao" src="https://cdn.lordicon.com/<?= ($produto['ativo']=='S') ? 'xryjrepg' : 'pnhskdva'?>.json" trigger="hover" colors="primary:#c71f16" style="width:40px;height:40px">
               </lord-icon>
             </a>
           </div>
