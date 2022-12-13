@@ -16,43 +16,43 @@ class Empresa extends DAO
   #[Campo(label: 'Nome fantasia', nn: true, order:true)]
   protected $nomeFantasia;
 
-  #[Campo(label: 'Razão social da empresa', nn: true)]
+  #[Campo(label: 'Razão social', nn: true)]
   protected $razaoSocial;
 
-  #[Campo(label: 'Tipo da empresa', nn: true)]
+  #[Campo(label: 'Tipo', nn: true)]
   protected $tipo;
 
-  #[Campo(label: 'CEP da empresa', nn: true)]
+  #[Campo(label: 'CEP', nn: true)]
   protected $cep;
 
-  #[Campo(label: 'Cidade da empresa', nn: true)]
+  #[Campo(label: 'Cidade', nn: true)]
   protected $cidade;
 
-  #[Campo(label: 'Estado da empresa', nn: true)]
+  #[Campo(label: 'Estado', nn: true)]
   protected $estado;
 
-  #[Campo(label: 'Rua da empresa')]
+  #[Campo(label: 'Rua')]
   protected $rua;
 
-  #[Campo(label: 'Bairro da empresa')]
+  #[Campo(label: 'Bairro')]
   protected $bairro;
 
-  #[Campo(label: 'Número da empresa')]
+  #[Campo(label: 'Número')]
   protected $numero;
 
-  #[Campo(label: 'Telefone 1 da empresa', nn: true)]
+  #[Campo(label: 'Telefone 1', nn: true)]
   protected $telefone1;
 
-  #[Campo(label: 'Telefone 2 da empresa')]
+  #[Campo(label: 'Telefone 2')]
   protected $telefone2;
 
-  #[Campo(label: 'Site da empresa')]
+  #[Campo(label: 'Site')]
   protected $site;
 
-  #[Campo(label: 'E-mail da empresa', nn: true)]
+  #[Campo(label: 'E-mail', nn: true)]
   protected $email;
 
-  #[Campo(label: 'CPNJ da empresa', nn: true)]
+  #[Campo(label: 'CPNJ', nn: true)]
   protected $cnpj;
 
   #[Campo(label: 'Dt. Criação', nn: true, auto: true)]
@@ -210,10 +210,14 @@ class Empresa extends DAO
 
   public function setTelefone1(string $telefone1): self
   {
-    $telefone1 = trim($telefone1);
-    $tipoValido = v::phone()->validate($telefone1);
-    if(!$tipoValido) {
-      throw new Exception('O campo telefone 01 tem valor inválido');
+    if(empty($telefone1)) {
+      $this->telefone1 = $telefone1;
+    } else {
+      $telefone1 = trim($telefone1);
+      $tipoValido = v::phone()->validate($telefone1);
+      if(!$tipoValido) {
+        throw new Exception('O campo telefone 01 tem valor inválido');
+      }
     }
     $this->telefone1 = $telefone1;
 
@@ -227,7 +231,13 @@ class Empresa extends DAO
 
   public function setTelefone2(string $telefone2): self
   {
-    $telefone2 = trim($telefone2);
+    $telefone1 = trim($telefone2);
+
+    if($telefone2 == '') {
+      $this->telefone2 = null;
+      return $this;
+    }
+
     $tipoValido = v::phone()->validate($telefone2);
     if(!$tipoValido) {
       throw new Exception('O campo telefone 02 tem valor inválido');
@@ -245,6 +255,12 @@ class Empresa extends DAO
   public function setSite(string $site): self
   {
     $site = trim($site);
+
+    if ($site == '') {
+      $this->site = null;
+      return $this;
+    }
+
     $tipoValido = v::url()->validate($site);
     if(!$tipoValido) {
       throw new Exception('O campo Site tem valor inválido');

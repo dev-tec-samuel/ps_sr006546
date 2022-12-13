@@ -94,6 +94,11 @@
                             <div class="sb-nav-link-icon"><i class="bi bi-tags-fill"></i></i></div>
                             Produtos
                         </a>
+
+                        <a class="nav-link" href="/admin/empresas">
+                            <div class="sb-nav-link-icon"><i class="bi bi-geo-alt-fill"></i></i></div>
+                            Empresas
+                        </a>
                         
                         <!-- EXEMPLO DE GRUPO DE LINKS SIMPLES 
                             OS ATRIBUTOS: data-bs-target E aria-controls DEVEM "CASAR" COM O ID DO ITEM QUE 

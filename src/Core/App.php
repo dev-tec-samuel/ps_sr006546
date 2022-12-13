@@ -47,7 +47,6 @@ class App
    */
   private static function registraRotasDoFrontEnd()
   {
-    // ROTAS dos GETTERS
     self::$router->get('/', '\Petshop\Controller\HomeController@index');
 
     self::$router->post('/ajax', '\Petshop\Controller\AjaxController@loader');
@@ -59,8 +58,8 @@ class App
     self::$router->get('/fale-conosco', '\Petshop\Controller\FaleConoscoController@faleConosco');
     self::$router->get('/categorias/{id}', '\Petshop\Controller\CategoriaController@listaProdutos');
     self::$router->get('/produtos/{id}', '\Petshop\Controller\ProdutoController@mostraProduto');
+    self::$router->get('/nossas-lojas', '\Petshop\Controller\LojasController@listaLojas');
 
-    //ROTAS dos SETTERS
     self::$router->post('/login', '\Petshop\Controller\LoginController@postlogin');
     self::$router->post('/cadastro', '\Petshop\Controller\CadastroController@postCadastro');
     self::$router->post('/fale-conosco', '\Petshop\Controller\FaleConoscoController@postFaleConosco');
@@ -110,6 +109,10 @@ class App
       self::$router->get('/produtos', '\Petshop\Controller\AdminProdutoController@listar');
       self::$router->get('/produtos/{valor}', '\Petshop\Controller\AdminProdutoController@form');
       self::$router->post('/produtos/{valor}', '\Petshop\Controller\AdminProdutoController@postForm');
+
+      self::$router->get('/empresas', '\Petshop\Controller\AdminEmpresaController@listar');
+      self::$router->get('/empresas/{valor}', '\Petshop\Controller\AdminEmpresaController@form');
+      self::$router->post('/empresas/{valor}', '\Petshop\Controller\AdminEmpresaController@postForm');
 
       self::$router->get('/imagens/(\w+)/(\d+)', '\Petshop\Controller\AdminImagemController@listar');
       self::$router->get('/imagens/(\w+)/(\d+)/(\w+)', '\Petshop\Controller\AdminImagemController@form');
