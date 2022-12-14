@@ -29,7 +29,7 @@ $categoriasListagem = '';
 
 foreach ($categorias ?? [] as $c) {
   $categoriasListagem .= <<<HTML
-            <li><a href="/categorias/{$c['idcategoria']}" class="text-decoration-none"">{$c['nome']}</a></li>
+            <a href="/categorias/{$c['idcategoria']}" class="text-decoration-none text-body">{$c['nome']}</a>
         HTML;
 }
 ?>
