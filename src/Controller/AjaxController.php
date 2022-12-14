@@ -180,6 +180,11 @@ class AjaxController
             WHERE idcarrinho = ?';
     DB::query($sql, [$idcarrinho, $idcarrinho]);
 
-    $this->retorno('success', 'Processo executado com sucesso');
+    $sql = 'SELECT valortotal FROM carrinhos WHERE idcarrinho = ?';
+    $rows = DB::query($sql, [$idcarrinho]);
+    $valorTotal = $rows[0]['valortotal'] ?? 0;
+
+    $dados = ['valortotal' => $valorTotal];
+    $this->retorno('success', 'Processo executado com sucesso', $dados);
   }
 }
