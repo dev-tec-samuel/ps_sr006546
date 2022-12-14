@@ -108,7 +108,8 @@ $produto['precodesconto'] = $produto['preco'] * (1 - $produto['desconto']);
               <a href="#" 
                 class="btn btn-success w-100 comprar-produto" 
                 style="font-size:18px;"
-                data-idproduto="<?=$produto['idproduto']?>">
+                data-idproduto="<?=$produto['idproduto']?>"
+                data-quantidade="1">
                 <i class="bi bi-cart2 me-2"></i>comprar
               </a>
             </div>
