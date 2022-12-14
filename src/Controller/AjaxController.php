@@ -121,7 +121,7 @@ class AjaxController
     $quantidade = (int) $dados['quantidade'];
 
     if ($produto->getQuantidade() < $quantidade) {
-      $this->retorno('info', 'Quantidade solicitada é solicitada é inferior a que temos em estoque');
+      $this->retorno('info', 'Quantidade solicitada é solicitada é superior a que temos em estoque');
     }
 
     /**
@@ -181,7 +181,7 @@ class AjaxController
     DB::query($sql, [$idcarrinho, $idcarrinho]);
 
     $sql = 'SELECT valortotal FROM carrinhos WHERE idcarrinho = ?';
-    $rows = DB::query($sql, [$idcarrinho]);
+    $rows = DB::select($sql, [$idcarrinho]);
     $valorTotal = $rows[0]['valortotal'] ?? 0;
 
     $dados = ['valortotal' => $valorTotal];
